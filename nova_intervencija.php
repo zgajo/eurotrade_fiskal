@@ -33,7 +33,17 @@ include 'init.php';
                                     <input name="intervencija_od" value="<?php echo date("d.m.Y H:i:s"); ?>">
                                     <br>
                                     <label>Kupac</label>
-                                    <input name="kupac">
+                                    <select name="kupac"> 
+                                        <?php  
+                                        $result = ListKupac();
+                                        while ($row = mysql_fetch_array($result)){                                        
+                                         echo "<option value='" . $row["id"] . "'>" . $row["tvrtka"] . ", ".$row["ime"]." ".$row["prezime"]."</option>";
+                                        
+                                        }
+                                        
+                                        
+                                        ?>
+                                    </select>
                                     <br>
                                     <label>Zatražena intervencija: </label>
                                     <input type="text" name="opis" maxlength="30">
@@ -47,7 +57,6 @@ include 'init.php';
                                 $int_od = $_GET['intervencija_od'];
                                 $kupac = $_GET['kupac'];
                                 $opis = $_GET['opis'];
-                                $unos = $_GET['unesi'];
                                 
                                 
                                 ?>

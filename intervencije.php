@@ -26,7 +26,7 @@ include 'init.php';
                                 
                                 <?php
                                 echo '<h1 style="display:inline">Intervencije</h1>';
-                                echo '<button style="display:inline; float:right;">Novi kupac</button>';
+                                echo '<button style="display:inline; float:right;"><a href="nova_intervencija.php">Nova intervencija</a></button>';
                                 $result = sve_intervencije();
                                 echo "<table border='1' style='color:green; font-size:14px;'>
                                         <tr>
@@ -42,7 +42,7 @@ include 'init.php';
 
                                 while ($row = mysql_fetch_array($result)) {
                                     echo "<tr>";
-                                    echo "<td><a  href='kupacDet.php?id=" .$row["fisk_kupac_id"]. "'><B>"/*. $row["id"]*/ ."Detalji</B></a></td>";
+                                    echo "<td><a  href='intervencijaDet.php?id=" .$row['id']. "'><B>"/*. $row["id"]*/ ."Detalji</B></a></td>";
                                     echo "<td>" . $row['id'] . "</td>";
                                     echo "<td>" . $row['opis'] . "</td>";
                                     echo "<td>" . $row['intervencija_od'] . "</td>";

@@ -19,6 +19,14 @@ function kupacDet($id){
 	    return $query;
 }
 
+function ListKupac(){
+    $query = mysql_query("SELECT id, tvrtka, ime, prezime FROM fisk_kupac");
+    if (!$query){
+        die('Invalid query: ' . mysql_error());
+    }
+    return $query;
+}
+
 function ispravka_kupca(){
     
 }

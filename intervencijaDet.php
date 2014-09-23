@@ -30,24 +30,24 @@ include 'init.php';
                                 echo "<table border='1' style='color:green; font-size:14px;'>
                                         <tr>
                                         <th>ID</th>
-                                        <th>Ime</th>
-                                        <th>Prezime</th>
-                                        <th>Tvrtka</th>
-                                        <th>Adresa</th>
-                                        <th>Kontakt broj</th>
-                                        <th>E-mail</th>
+                                        <th>opis</th>
+                                        <th>Zatražena</th>
+                                        <th>Izvršena</th>
+                                        <th>Naplaćena šifra</th>
+                                        <th>Servis izvršio</th>
+                                        <th>Stranka</th>
                                         </tr>";
                                 $id = $_GET['id'];
-                                $result = kupacDet($id);
+                                $result = intervencijaDet($id);
                                 while ($row = mysql_fetch_array($result)) {
                                     echo "<tr>";
                                     echo "<td>" . $row['id'] . "</td>";
-                                    echo "<td>" . $row['ime'] . "</td>";
-                                    echo "<td>" . $row['prezime'] . "</td>";
-                                    echo "<td>" . $row['tvrtka'] . "</td>";
-                                    echo "<td>" . $row['adresa'] . "</td>";
-                                    echo "<td>" . $row['kontakt_broj'] . "</td>";
-                                    echo "<td>" . $row['email'] . "</td>";
+                                    echo "<td>" . $row['opis'] . "</td>";
+                                    echo "<td>" . $row['intervencija_od'] . "</td>";
+                                    echo "<td>" . $row['intervencija_do'] . "</td>";
+                                    echo "<td>" . $row['sifra_naplate'] . "</td>";
+                                    echo "<td>" . $row['serviser_ime'] . ' ' . $row['serviser_prezime'] . "</td>";
+                                    echo "<td>" . $row['ime'] . ' ' . $row['prezime'] . ', ' . $row['tvrtka'] . "</td>";
                                     echo "</tr>";
                                 }
                                 echo "</table>";
