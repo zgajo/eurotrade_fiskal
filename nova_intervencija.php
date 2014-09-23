@@ -57,7 +57,7 @@ include 'init.php';
                                 $int_od = $_GET['intervencija_od'];
                                 $kupac = $_GET['kupac'];
                                 $opis = $_GET['opis'];
-                                
+                                if
                                 
                                 ?>
 
