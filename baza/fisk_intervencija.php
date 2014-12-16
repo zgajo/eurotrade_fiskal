@@ -17,5 +17,4 @@ function intervencijaDet($id){
     return $query;
 }
 
-
 ?>

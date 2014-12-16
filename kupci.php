@@ -104,14 +104,10 @@ include 'init.php';
            <script>
             $(document).ready(function(){
                $('tr').click(function(){
-                   $(this).attr('id');
-               }) 
+               }) ;
                 
             });
             </script>   
     </body>
 </html>
 
-
-
-<?php ?>
