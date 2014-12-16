@@ -13,7 +13,7 @@ include 'init.php';
         <meta name="description" content="Description of your site goes here">
         <meta name="keywords" content="Eurotrade, Servis, Eurotrade servis">
         <link href="css/style.css" rel="stylesheet" type="text/css">
-        
+        <script type='text/javascript' src="js/jquery-1.11.1.min.js"></script>
     </head>
     <body>
         <div class="main">
@@ -38,9 +38,9 @@ include 'init.php';
                                         <th>Kontakt broj</th>
                                         <th>E-mail</th>
                                         </tr>";
-
+                                
                                 while ($row = mysql_fetch_array($result)) {
-                                    echo "<tr>";
+                                    echo "<tr><a  href='intervencijaDet.php?id=" .$row['id']. "'>";
                                     echo "<td>" . $row['id'] . "</td>";
                                     echo "<td>" . $row['ime'] . "</td>";
                                     echo "<td>" . $row['prezime'] . "</td>";
@@ -48,8 +48,9 @@ include 'init.php';
                                     echo "<td>" . $row['adresa'] . "</td>";
                                     echo "<td>" . $row['kontakt_broj'] . "</td>";
                                     echo "<td>" . $row['email'] . "</td>";
-                                    echo "</tr>";
+                                    echo "</a></tr>";
                                 }
+                                
                                 echo "</table>";
                                 ?>
                                 <p>&nbsp;</p>
@@ -100,7 +101,14 @@ include 'init.php';
             </div>
         </div>
 
-
+           <script>
+            $(document).ready(function(){
+               $('tr').click(function(){
+                   $(this).attr('id');
+               }) 
+                
+            });
+            </script>   
     </body>
 </html>
 
