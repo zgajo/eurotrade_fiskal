@@ -104,6 +104,7 @@ include 'init.php';
            <script>
             $(document).ready(function(){
                $('tr').click(function(){
+                  window.location.href='intervencijaDet.php?id=""';                                    
                }) ;
                 
             });
