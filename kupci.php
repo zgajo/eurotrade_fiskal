@@ -26,7 +26,7 @@ include 'init.php';
                                 
                                 <?php
                                 echo '<h1 style="display:inline">Kupci</h1>';
-                                echo '<button style="display:inline; float:right;">Novi kupac</button>';
+                                echo '<a href="novi_kupac.php"><button style="display:inline; float:right;">Novi kupac</button></a>';
                                 $result = svi_kupci();
                                 echo "<table border='1' style='color:green; font-size:14px;'>
                                         <tr>
