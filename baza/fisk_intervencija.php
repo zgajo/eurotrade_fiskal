@@ -18,7 +18,7 @@ function intervencijaDet($id){
 }
 
 function intervencijaKupDet($kupac_id){
-    $query = mysql_query("SELECT i.*, k.ime, k. prezime, k.tvrtka FROM fisk_intervencija i, fisk_kupac k WHERE i.fisk_kupac_id = '$kupac_id' AND i.fisk_kupac_id = k.id ");
+    $query = mysql_query("SELECT i.*, k.ime, k. prezime, k.tvrtka,u.ime as serviser_ime, u.prezime as serviser_prezime FROM fisk_intervencija i, fisk_kupac k, fisk_user u WHERE i.fisk_kupac_id = '$kupac_id' AND i.fisk_kupac_id = k.id AND i.fisk_user_id = u.id ORDER BY i.id");
     
     if (!$query) {
         die('Invalid query: ' . mysql_error());

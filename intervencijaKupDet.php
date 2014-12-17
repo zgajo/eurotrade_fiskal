@@ -35,7 +35,7 @@ include 'init.php';
                                         <th>Zatražena</th>
                                         <th>Izvršena</th>
                                         <th>Naplaćena šifra</th>
-
+                                        <th>Serviser</th>
 
                                         </tr>";
                                 $kupac_id = $_GET['fisk_kupac_id'];
@@ -48,8 +48,7 @@ include 'init.php';
                                     echo "<td>" . $row['intervencija_od'] . "</td>";
                                     echo "<td>" . $row['intervencija_do'] . "</td>";
                                     echo "<td>" . $row['sifra_naplate'] . "</td>";
-
-                                  
+                                    echo "<td>". $row['serviser_ime']. ' ' . $row['serviser_prezime']."</td>";
                                     echo "</tr>";
                                 }
                                 echo "</table>";
