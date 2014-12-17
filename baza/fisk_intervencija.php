@@ -17,4 +17,13 @@ function intervencijaDet($id){
     return $query;
 }
 
+function intervencijaKupDet($kupac_id){
+    $query = mysql_query("SELECT i.*, k.ime, k. prezime, k.tvrtka FROM fisk_intervencija i, fisk_kupac k WHERE i.fisk_kupac_id = '$kupac_id' AND i.fisk_kupac_id = k.id ");
+    
+    if (!$query) {
+        die('Invalid query: ' . mysql_error());
+    }
+    return $query;
+}
+
 ?>

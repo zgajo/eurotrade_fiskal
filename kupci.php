@@ -37,10 +37,11 @@ include 'init.php';
                                         <th>Adresa</th>
                                         <th>Kontakt broj</th>
                                         <th>E-mail</th>
+                                        <th>Intervencije</th>
                                         </tr>";
                                 
                                 while ($row = mysql_fetch_array($result)) {
-                                    echo "<tr><a  href='intervencijaDet.php?id=" .$row['id']. "'>";
+                                    echo "<tr>";
                                     echo "<td>" . $row['id'] . "</td>";
                                     echo "<td>" . $row['ime'] . "</td>";
                                     echo "<td>" . $row['prezime'] . "</td>";
@@ -48,6 +49,7 @@ include 'init.php';
                                     echo "<td>" . $row['adresa'] . "</td>";
                                     echo "<td>" . $row['kontakt_broj'] . "</td>";
                                     echo "<td>" . $row['email'] . "</td>";
+                                    echo "<td><a  href='intervencijaKupDet.php?fisk_kupac_id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Detalji</B></a></td>";
                                     echo "</a></tr>";
                                 }
                                 
