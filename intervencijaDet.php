@@ -31,6 +31,7 @@ include 'init.php';
                                         <tr>
                                         <th>ID</th>
                                         <th>opis</th>
+                                        <th>Obavljeno</th>
                                         <th>Zatražena</th>
                                         <th>Izvršena</th>
                                         <th>Naplaćena šifra</th>
@@ -43,6 +44,7 @@ include 'init.php';
                                     echo "<tr>";
                                     echo "<td>" . $row['id'] . "</td>";
                                     echo "<td>" . $row['opis'] . "</td>";
+                                    echo "<td>" . $row['obavljeno'] . "</td>";
                                     echo "<td>" . $row['intervencija_od'] . "</td>";
                                     echo "<td>" . $row['intervencija_do'] . "</td>";
                                     echo "<td>" . $row['sifra_naplate'] . "</td>";
