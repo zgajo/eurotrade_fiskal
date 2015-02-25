@@ -72,7 +72,7 @@ include 'init.php';
                                 <div class="right-block">
                                     <h2>Kategorije</h2>
                                     <ul>
-                                        <li><a href="#">Nova intervencija</a></li>
+                                        <li><a href="nova_intervencija.php">Nova intervencija</a></li>
                                         <li><a href="novi_kupac.php">Novi kupac</a></li>
                                         <li><a href="#">Novi ugovor</a></li>
 
