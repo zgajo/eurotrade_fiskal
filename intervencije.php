@@ -34,6 +34,7 @@ include 'init.php';
                                 echo "<table border='1' style='color:green; font-size:14px;'>
                                         <tr>
                                         <th>Detalji</th>
+                                        <th>Zatvori rn</th>
                                         <th>ID</th>
                                         <th>Kupac</th>
                                         <th>Opis intervencije:</th>
@@ -46,6 +47,7 @@ include 'init.php';
                                 while ($row = mysql_fetch_array($result)) {
                                     echo "<tr>";
                                     echo "<td><a  href='intervencijaDet.php?id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Detalji</B></a></td>";
+                                    echo "<td><a  href='zavrsi_interv.php?id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Izmijeni rn</B></a></td>";
                                     echo "<td>" . $row['id'] . "</td>";
                                     echo "<td>" . $row['ime'] . ' ' . $row['prezime'] . ', ' . $row['tvrtka'] . "</td>";
                                     echo "<td>" . $row['opis'] . "</td>";
