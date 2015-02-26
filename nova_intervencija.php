@@ -25,15 +25,11 @@ include 'init.php';
                                 <h1 class="title">Ubacite podatke <span>novoga kupca</span></h1>
                                 <form class="unos" action="nova_intervencija.php" method="GET">
 
-                                    <label>Radni nalog servisa: </label>
-                                    <input type="text" name="broj_rn" maxlength="30" value="<?php ?>">
-
-                                    <br>
                                     <label>Intervencija zatražena: </label>
-                                    <input name="intervencija_od" value="<?php echo date("d.m.Y H:i:s"); ?>">
+                                    <input name="intervencija_od" value="<?php echo date("d.m.Y"); ?>">
                                     <br>
                                     <label>Kupac</label>
-                                    <select name="kupac"> 
+                                    <select name="fisk_kupac_id"> 
                                         <?php  
                                         $result = ListKupac();
                                         while ($row = mysql_fetch_array($result)){                                        
@@ -53,12 +49,14 @@ include 'init.php';
                                 </form>
 
                                 <?php
-                                $rn = $_GET['broj_rn'];
+                                if (!empty($_GET)) {
                                 $int_od = $_GET['intervencija_od'];
-                                $kupac = $_GET['kupac'];
+                                $fisk_kupac_id = $_GET['fisk_kupac_id'];
                                 $opis = $_GET['opis'];
-                              
-                                
+                                $user_id = 1;
+                                nova_intervencija($int_od, $fisk_kupac_id, $opis, $user_id);
+                                header("location:intervencije.php");
+                                }
                                 ?>
 
                                 <p>&nbsp;</p>

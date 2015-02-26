@@ -1,7 +1,7 @@
 <?php
 
 function sve_intervencije(){
-        $query = mysql_query("SELECT i.*, u.ime as serviser_ime, u.prezime as serviser_prezime, k.ime, k. prezime, k.tvrtka FROM fisk_intervencija i, fisk_user u, fisk_kupac k WHERE i.fisk_user_id = u.id AND i.fisk_kupac_id = k.id");
+        $query = mysql_query("SELECT i.*, u.ime as serviser_ime, u.prezime as serviser_prezime, k.ime, k. prezime, k.tvrtka FROM fisk_intervencija i, fisk_user u, fisk_kupac k WHERE i.fisk_user_id = u.id AND i.fisk_kupac_id = k.id ORDER BY id ASC");
 
     if (!$query) {
         die('Invalid query: ' . mysql_error());
@@ -25,5 +25,11 @@ function intervencijaKupDet($kupac_id){
     }
     return $query;
 }
+function nova_intervencija($int_od, $fisk_kupac_id, $opis, $user_id){
+    mysql_query("INSERT INTO fisk_intervencija (opis, intervencija_od, fisk_kupac_id, fisk_user_id) VALUES ('$opis', '$int_od', '$fisk_kupac_id', '$user_id')");
+    
+}
+
+
 
 ?>
