@@ -38,6 +38,7 @@ include 'init.php';
                                         <th>Kontakt broj</th>
                                         <th>E-mail</th>
                                         <th>Intervencije</th>
+                                        <th>Promjena podataka</th>
                                         </tr>";
                                 
                                 while ($row = mysql_fetch_array($result)) {
@@ -50,6 +51,7 @@ include 'init.php';
                                     echo "<td>" . $row['kontakt_broj'] . "</td>";
                                     echo "<td>" . $row['email'] . "</td>";
                                     echo "<td><a  href='intervencijaKupDet.php?fisk_kupac_id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Detalji</B></a></td>";
+                                    echo "";
                                     echo "</a></tr>";
                                 }
                                 
