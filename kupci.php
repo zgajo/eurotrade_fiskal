@@ -35,6 +35,7 @@ include 'init.php';
                                         <th>Prezime</th>
                                         <th>Tvrtka</th>
                                         <th>Adresa</th>
+                                        <th>Grad</th>
                                         <th>Kontakt broj</th>
                                         <th>E-mail</th>
                                         <th>Intervencije</th>
@@ -48,10 +49,11 @@ include 'init.php';
                                     echo "<td>" . $row['prezime'] . "</td>";
                                     echo "<td>" . $row['tvrtka'] . "</td>";
                                     echo "<td>" . $row['adresa'] . "</td>";
+                                    echo "<td>" . $row['grad'] . "</td>";
                                     echo "<td>" . $row['kontakt_broj'] . "</td>";
                                     echo "<td>" . $row['email'] . "</td>";
                                     echo "<td><a  href='intervencijaKupDet.php?fisk_kupac_id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Detalji</B></a></td>";
-                                    echo "";
+                                    echo "<td><a href='ispravka_kupca.php?fisk_kupac_id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Ispravka</B></a></td>";
                                     echo "</a></tr>";
                                 }
                                 
