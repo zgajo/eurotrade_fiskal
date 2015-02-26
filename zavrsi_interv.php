@@ -82,7 +82,7 @@ include 'init.php';
                             </div>
                         </div>
                     </div>
-                    <div class="">
+                    <div class="sections">
                         <div class="section1">
                             <h3>Kupci</h3>
                             <p>&nbsp;</p>
