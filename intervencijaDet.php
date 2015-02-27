@@ -24,8 +24,8 @@ include 'init.php';
                         <div>
                             <div>
                                 <h1 class="title">Završavanje radnog<span> naloga</span></h1>
+                                <button style="display:inline; float:right;">Novi kupac</button>
                                 <?php
-                                echo '<button style="display:inline; float:right;">Novi kupac</button>';
                                 echo '<form class="unos" action="" method="GET">';
                                 $id = $_GET['id'];
                                 $result = intervencijaDet($id);
@@ -36,20 +36,8 @@ include 'init.php';
                                     echo "<input name='intervencija_od' value=" . $row['intervencija_od'] . ">";
                                     echo "<label>Intervencija završena:</label>";
                                     echo "<input name='intervencija_do' value=" . $row['intervencija_do'] . ">";
-                                    echo "<label>Kupac:</label>";
-                                    echo "<input name='kupac' value=" . $row['fisk_kupac_id'] . ">";
-                                    echo "<select>";
-                                    $_GET['kupac'] = $row['fisk_kupac_id'];
-                                    $list = ListKupac();
-                                    while ($raw = mysql_fetch_array($raw)) {
-                                        if ($_GET['kupac'] == $row['fisk_kupac_id']) {
-                                            $selected = "selected";
-                                        } else {
-                                            $selected = NULL;
-                                        }
-                                        echo "<option " . $selected . " value='" . $row["id"] . "'>" . $row["tvrtka"] . "</option>";
-                                    };
-                                    echo "</select>";
+                                    echo "<label>Ime kupca:</label>";
+                                    echo "<input name='kupac' value=" .$row['ime'].">";
                                     echo "<label>Naplaćena šifra:</label>";
                                     echo "<input name='sifra_naplate' value=" . $row['sifra_naplate'] . ">";
                                     echo "<label>Zatraženi servis:</label>";
