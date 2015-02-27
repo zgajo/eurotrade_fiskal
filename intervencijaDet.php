@@ -23,36 +23,29 @@ include 'init.php';
                     <div style="width: 900px;">
                         <div>
                             <div>
-                                
+                                 <h1 class="title">Završavanje radnog<span> naloga</span></h1>
                                 <?php
-                                echo '<h1 style="display:inline">Kupci</h1>';
+                                
                                 echo '<button style="display:inline; float:right;">Novi kupac</button>';
-                                echo "<table border='1' style='color:green; font-size:14px;'>
-                                        <tr>
-                                        <th>ID</th>
-                                        <th>opis</th>
-                                        <th>Obavljeno</th>
-                                        <th>Zatražena</th>
-                                        <th>Izvršena</th>
-                                        <th>Naplaćena šifra</th>
-                                        <th>Servis izvršio</th>
-                                        <th>Stranka</th>
-                                        </tr>";
+                               echo '<form class="unos" action="" method="GET">';
                                 $id = $_GET['id'];
                                 $result = intervencijaDet($id);
                                 while ($row = mysql_fetch_array($result)) {
-                                    echo "<tr>";
-                                    echo "<td>" . $row['id'] . "</td>";
-                                    echo "<td>" . $row['opis'] . "</td>";
-                                    echo "<td>" . $row['obavljeno'] . "</td>";
-                                    echo "<td>" . $row['intervencija_od'] . "</td>";
-                                    echo "<td>" . $row['intervencija_do'] . "</td>";
-                                    echo "<td>" . $row['sifra_naplate'] . "</td>";
-                                    echo "<td>" . $row['serviser_ime'] . ' ' . $row['serviser_prezime'] . "</td>";
-                                    echo "<td>" . $row['ime'] . ' ' . $row['prezime'] . ', ' . $row['tvrtka'] . "</td>";
-                                    echo "</tr>";
+                                   echo "<label>Id intervencije:</label>";
+                                    echo "<input name='id' value=".$row['id'].">";
+                                    echo "<label>Intervencija zatražena:</label>";
+                                    echo "<input name='intervencija_od' value=".$row['intervencija_od'].">";
+                                    echo "<label>Intervencija završena:</label>";
+                                    echo "<input name='intervencija_do' value=".$row['intervencija_do'].">";
+                                    
+                                    echo "<label>Naplaćena šifra:</label>";
+                                    echo "<input name='sifra_naplate' value=".$row['sifra_naplate'].">";
+                                    echo "<label>Zatraženi servis:</label>";
+                                    echo "<input name='opis' value=".$row['opis'].">";
+                                    echo "<label>Obavljeni servis:</label>";
+                                    echo "<input name='obavljeno' value=".$row['obavljeno'].">";
                                 }
-                                echo "</table>";
+                               echo '</form>';
                                 ?>
                                 <p>&nbsp;</p>
                                 <p>&nbsp;</p>
