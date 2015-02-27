@@ -13,47 +13,59 @@ include 'init.php';
         <meta name="description" content="Description of your site goes here">
         <meta name="keywords" content="Eurotrade, Servis, Eurotrade servis">
         <link href="css/style.css" rel="stylesheet" type="text/css">
-        
+
     </head>
     <body>
         <div class="main">
             <div class="page-out">
-                <?php include 'dijeloviHTML/header.php';?>
+                <?php include 'dijeloviHTML/header.php'; ?>
                 <div class="content">
                     <div style="width: 900px;">
                         <div>
                             <div>
-                                 <h1 class="title">Završavanje radnog<span> naloga</span></h1>
+                                <h1 class="title">Završavanje radnog<span> naloga</span></h1>
                                 <?php
-                                
                                 echo '<button style="display:inline; float:right;">Novi kupac</button>';
-                               echo '<form class="unos" action="" method="GET">';
+                                echo '<form class="unos" action="" method="GET">';
                                 $id = $_GET['id'];
                                 $result = intervencijaDet($id);
                                 while ($row = mysql_fetch_array($result)) {
-                                   echo "<label>Id intervencije:</label>";
-                                    echo "<input name='id' value=".$row['id'].">";
+                                    echo "<label>Id intervencije:</label>";
+                                    echo "<input name='id' value=" . $row['id'] . ">";
                                     echo "<label>Intervencija zatražena:</label>";
-                                    echo "<input name='intervencija_od' value=".$row['intervencija_od'].">";
+                                    echo "<input name='intervencija_od' value=" . $row['intervencija_od'] . ">";
                                     echo "<label>Intervencija završena:</label>";
-                                    echo "<input name='intervencija_do' value=".$row['intervencija_do'].">";
-                                    
+                                    echo "<input name='intervencija_do' value=" . $row['intervencija_do'] . ">";
+                                    echo "<label>Kupac:</label>";
+                                    echo "<input name='kupac' value=" . $row['fisk_kupac_id'] . ">";
+                                    echo "<select>";
+                                    $_GET['kupac'] = $row['fisk_kupac_id'];
+                                    $list = ListKupac();
+                                    while ($raw = mysql_fetch_array($raw)) {
+                                        if ($_GET['kupac'] == $row['fisk_kupac_id']) {
+                                            $selected = "selected";
+                                        } else {
+                                            $selected = NULL;
+                                        }
+                                        echo "<option " . $selected . " value='" . $row["id"] . "'>" . $row["tvrtka"] . "</option>";
+                                    };
+                                    echo "</select>";
                                     echo "<label>Naplaćena šifra:</label>";
-                                    echo "<input name='sifra_naplate' value=".$row['sifra_naplate'].">";
+                                    echo "<input name='sifra_naplate' value=" . $row['sifra_naplate'] . ">";
                                     echo "<label>Zatraženi servis:</label>";
-                                    echo "<input name='opis' value=".$row['opis'].">";
+                                    echo "<input name='opis' value=" . $row['opis'] . ">";
                                     echo "<label>Obavljeni servis:</label>";
-                                    echo "<input name='obavljeno' value=".$row['obavljeno'].">";
+                                    echo "<input name='obavljeno' value=" . $row['obavljeno'] . ">";
                                 }
-                               echo '</form>';
+                                echo '</form>';
                                 ?>
                                 <p>&nbsp;</p>
                                 <p>&nbsp;</p>
                             </div>
                         </div>
                     </div>
-                  
-                   <div class="sections">
+
+                    <div class="sections">
                         <div class="section1">
                             <h3>Kupci</h3>
                             <p>&nbsp;</p>
@@ -90,10 +102,10 @@ include 'init.php';
                             <p>&nbsp;</p>
                             <p><a href="#" class="more">Više</a></p>
                         </div>
+                    </div>
+<?php include 'dijeloviHTML/footer.php'; ?>
                 </div>
-                <?php include 'dijeloviHTML/footer.php';?>
             </div>
-        </div>
 
 
     </body>
