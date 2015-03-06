@@ -7,30 +7,35 @@ include 'init.php';
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Zatvaranje radnog naloga</title>
+        <title>Intervencije</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="description" content="Description of your site goes here">
         <meta name="keywords" content="Eurotrade, Servis, Eurotrade servis">
         <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="css/kontakt.css" rel="stylesheet" type="text/css">
+
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
     </head>
     <body>
+
         <div class="main">
             <div class="page-out">
                 <?php include 'dijeloviHTML/header.php'; ?>
                 <div class="content">
-                    <div class="left-out">
-                        <div class="left-in">
-                            <div class="left-panel">
+                    <div style="width: 900px;">
+                        <div>
+                            <div>
+
                                 <h1 class="title">Završavanje radnog<span> naloga</span></h1>
-                               
-                                
+
+
                                 <?php
-                               echo "<form  class='unos' action='' method='GET'>";
+                                echo "<form  class='unos' action='' method='GET'>";
                                 $id = $_GET['id'];
                                 $result = intervencijaDet($id);
                                 while ($row = mysql_fetch_array($result)) {
-                                    
+
                                     echo "<label>ID</label>";
                                     echo "<input name='i_id' value='" . $row['id'] . "'></input>";
                                     echo "<label>Intervencija od: </label>";
@@ -47,39 +52,69 @@ include 'init.php';
                                     echo "<input value='" . $row['ime'] . ' ' . $row['prezime'] . ', ' . $row['tvrtka'] . "'></Input>";
                                     echo "<input type='submit' name='akcija' value='Unesi'></input>";
                                 }
-                                 echo "</form>";
+                                echo "</form>";
                                 ?>
                                 <?php
-                                if (isset($_GET[('akcija')])) {
-                                    $id=$_GET["i_id"];
-                                    $obavljeno = $_GET["obavljeno"];
-                                    $i_do = $_GET["intervencija_do"];
-                                    $sifra_naplate = $_GET["sifra_naplate"];
-                                   inter_update($id, $obavljeno,  $i_do, $sifra_naplate);
-                                   header("location: intervencije.php");
+                                $id = $_GET['id'];
+                                $result = intervencijaDet($id);
+                                while ($row = mysql_fetch_array($result)) {
+                                    $_GET['id'] = $row['id'];
+                                    $_GET['intervencija_od'] = $row['intervencija_od'];
+                                    $_GET['intervencija_do'] = $row['intervencija_do'];
+                                    $_GET['opis'] = $row['opis'];
+                                    $_GET['obavljeno'] = $row['obavljeno'];
+                                    $_GET['sifra_naplate'] = $row['sifra_naplate'];
+                                    $_GET['ime'] = $row['ime'];
+                                    $_GET['prezime'] = $row['prezime'];
+                                    $_GET['tvrtka'] = $row['tvrtka'];
+                                    $_GET['kontakt_broj'] = $row['kontakt_broj'];
+                                    $_GET['grad'] = $row['grad'];
+                                    $_GET['adresa'] = $row['adresa'];
+                                    $_GET['email'] = $row['email'];
                                 }
                                 ?>
+                                <section id="container">
+                                    <h2>Radni nalog: <?=$_GET['id']?></h2>
+                                    <form name="hongkiat" id="hongkiat-form" method="get" action="">
+                                        <div id="wrapping" class="clearfix">
+                                            <section id="aligned">
+                                                <input type="text" name="name" id="name" placeholder="<?=  date_format($_GET['intervencija_od'], ('d.m.Y'))?>" autocomplete="off" tabindex="1" class="txtinput" required="">
+
+                                                <input type="email" name="email" id="email" placeholder="Vaša e-mail adresa" autocomplete="off" tabindex="2" class="txtinput" required="">
+
+                                                <input type="tel" name="telephone" id="telephone" placeholder="Kontakt broj" tabindex="4" class="txtinput">
+
+                                                <textarea name="message" id="message" placeholder="Izvršeni servis..." tabindex="5" class="txtblock"></textarea>
+                                                <section id="buttons">
+                                                    <input type="submit" name="submit" id="submitbtn" class="submitbtn" tabindex="7" value="Pošalji!">
+
+                                                    <br style="clear:both;">
+                                                </section>
+                                            </section>
+
+                                            <div id="aside" class="clearfix">
+                                                <div id="recipientcase">
+                                                    <h2><?= $_GET['tvrtka'] ?></h2>
+                                                    <h3>Ime i prezime: <?= $_GET['ime'] . ' ' . $_GET['prezime'] ?></h3>
+                                                    <h3>Grad: <?= $_GET['grad'] ?></h3>
+                                                    <h3>Adresa: <?= $_GET['adresa'] ?></h3>
+                                                    <h3>Tel: <?= $_GET['kontakt_broj'] ?></h3>
+                                                    <h3>Email: <?= $_GET['email'] ?></h3>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </form>
+                                </section>
 
                                 <p>&nbsp;</p>
                                 <p>&nbsp;</p>
                             </div>
                         </div>
                     </div>
-                    <div class="right-out">
-                        <div class="right-in">
-                            <div class="right-panel">
-                                <div class="right-block">
-                                    <h2>Kategorije</h2>
-                                    <ul>
-                                        <li><a href="nova_intervencija.php">Nova intervencija</a></li>
-                                        <li><a href="novi_kupac.php">Novi kupac</a></li>
-                                        <li><a href="#">Novi ugovor</a></li>
 
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="sections">
                         <div class="section1">
                             <h3>Kupci</h3>
@@ -118,11 +153,12 @@ include 'init.php';
                             <p><a href="#" class="more">Više</a></p>
                         </div>
                     </div>
+                    <?php include 'dijeloviHTML/footer.php'; ?>
                 </div>
-<?php include 'dijeloviHTML/footer.php'; ?>
-            </div>
-        </div>
 
 
-    </body>
-</html>
+                </body>
+                </html>
+
+
+
