@@ -40,6 +40,9 @@ include 'init.php';
                                     <input type="file" name="file">
                                     <input type="submit" value="Upload">
                                 </form>
+                                
+                                <h1 class="title">Upute za postavljenje<span> kase u rad:</span></h1>
+                                
                                 <?php
 if ($handle = opendir('pdf/')) {
     while (false !== ($file = readdir($handle)))
@@ -55,7 +58,6 @@ if ($handle = opendir('pdf/')) {
 }
 ?>
 
-<P>List of files:</p>
 <UL>
 <P><?=$thelist?></p>
 </UL>
