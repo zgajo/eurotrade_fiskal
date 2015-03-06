@@ -22,8 +22,8 @@ include 'init.php';
                     <div class="left-out">
                         <div class="left-in">
                             <div class="left-panel">
-                                <h1 class="title">Ubacite podatke <span>novoga kupca</span></h1>
-                                <form class="unos" action="nova_intervencija.php" method="GET">
+                                <h1 class="title">Nova <span>intervencija</span></h1>
+                                <form class="unos" action="" method="GET">
 
                                     <label>Intervencija zatražena: </label>
                                     <input name="intervencija_od" value="<?php echo date("d.m.Y"); ?>">
@@ -36,13 +36,11 @@ include 'init.php';
                                          echo "<option value='" . $row["id"] . "'>" . $row["tvrtka"] . ", ".$row["ime"]." ".$row["prezime"]."</option>";
                                         
                                         }
-                                        
-                                        
                                         ?>
                                     </select>
                                     <br>
                                     <label>Zatražena intervencija: </label>
-                                    <input type="text" name="opis" maxlength="30">
+                                    <input type="text" name="opis" maxlength="100">
                                     <br>
                                     <br><input name="unesi" type="submit" value="Unesi">
 

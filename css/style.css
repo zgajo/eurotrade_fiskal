@@ -354,6 +354,9 @@ a.more:hover {
 .unos input {
    width: 200px;
 }
+.unos select {
+   width: 200px;
+}
 
 
 #search_box{
