@@ -7,56 +7,64 @@ include 'init.php';
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Eurotrade Fiskal</title>
+        <title>Intervencije</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="description" content="Description of your site goes here">
         <meta name="keywords" content="Eurotrade, Servis, Eurotrade servis">
         <link href="css/style.css" rel="stylesheet" type="text/css">
-        <script src="js/jquery-2.1.1.js"></script>
-        <script src="js/search.js"></script>
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
     </head>
     <body>
+
         <div class="main">
             <div class="page-out">
-               <?php include 'dijeloviHTML/header.php';?>
+                <?php include 'dijeloviHTML/header.php'; ?>
                 <div class="content">
-                    
-                    <div class="left-out">
-                        <div class="left-in">
-                            <div class="left-panel">
-                                <h1 class="title">Dobrodošli <span>na našu stranicu</span></h1>
-                                <p>Za sva pitanja i probleme kontaktirati Darka Pranjića ili Mladena Vitulića. Oni su najbolji! <br>
-                                    Trenutno je u izradi stranica za ubacivanje novih kupaca
-                                </p>
-                                <p>&nbsp;</p>
-                                <span id="box">
-                                    <input type="text" id="search_box"><button id="search_button">Pretraži</button>
-                                </span>
-                                <div id="search_result">
-                                    
-                                </div>
-                                <p>&nbsp;</p>
-                                <p>&nbsp;</p>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="right-out">
-                        <div class="right-in">
-                            <div class="right-panel">
-                                <div class="right-block">
-                                    <h2>Kategorije</h2>
-                                    <ul>
-                                        <li><a href="nova_intervencija.php">Nova intervencija</a></li>
-                                        <li><a href="novi_kupac.php">Novi kupac</a></form></li>
-                                        <li><a href="#">Novi ugovor</a></li>
+                    <div style="width: 900px;">
+                        <div>
+                            <div>
+                                <?php
+                                if ($_POST['upload'] == "1"){
+                                    $destination = "pdf/".$_FILES['file']['name'];
+                                    move_uploaded_file($_FILES['file']['tmp_name'], $destination);
+                                   echo "Ime uploadane datoteke: ".$_FILES['file']['name']; 
+                                   echo "<br>";
+                                   echo "Veličina uploadane datoteke: ".$_FILES['file']['size']." bytova";
+                                   echo "<br>";
+                                   echo "Vrsta uploadane datoteke: ".$_FILES['file']['type'];
+                                }
+                                ?>
+                                <form method="POST" enctype="multipart/form-data">
+                                    <input type="hidden" name="upload" value="1">
+                                    <input type="file" name="file">
+                                    <input type="submit" value="Upload">
+                                </form>
+                                <?php
+if ($handle = opendir('pdf/')) {
+    while (false !== ($file = readdir($handle)))
+    {
+        if (($file != ".") 
+         && ($file != ".."))
+        {
+            $thelist .= '<LI><a href="pdf/'.$file.'">'.$file.'</a>';
+        }
+    }
 
-                                    </ul>
-                                </div>
+    closedir($handle);
+}
+?>
+
+<P>List of files:</p>
+<UL>
+<P><?=$thelist?></p>
+</UL>
+                                <p>&nbsp;</p>
+                                <p>&nbsp;</p>
                             </div>
                         </div>
                     </div>
+
                     <div class="sections">
                         <div class="section1">
                             <h3>Kupci</h3>
@@ -83,7 +91,7 @@ include 'init.php';
                             <p>Instrukcije postavljanja kase u rad i najčešći problemi koji se javljaju na kasi<br>
                             </p>
                             <p>&nbsp;</p>
-                            <p><a href="files.php" class="more">Više</a></p>
+                            <p><a href="#" class="more">Više</a></p>
                         </div>
                         <div class="section4">
                             <h3>Uputstva za kupca</h3>
@@ -95,11 +103,12 @@ include 'init.php';
                             <p><a href="#" class="more">Više</a></p>
                         </div>
                     </div>
+<?php include 'dijeloviHTML/footer.php'; ?>
                 </div>
-                <?php include 'dijeloviHTML/footer.php';?>
-            </div>
-        </div>
 
 
-    </body>
-</html>
+                </body>
+                </html>
+
+
+
