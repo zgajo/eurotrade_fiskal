@@ -1,5 +1,6 @@
 <?php
 include './init.php';
+ob_start();
 ?>
 
 
@@ -7,21 +8,22 @@ include './init.php';
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Novi kupac</title>
+        <title>Izmjena podataka kupca</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="description" content="Description of your site goes here">
         <meta name="keywords" content="Eurotrade, Servis, Eurotrade servis">
         <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="css/kontakt.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div class="main">
             <div class="page-out">
                 <?php include 'dijeloviHTML/header.php'; ?>
                 <div class="content">
-                    <div class="left-out">
-                        <div class="left-in">
-                            <div class="left-panel">
+                    <div  style="width: 900px;">
+                        <div>
+                            <div>
                                 <h1 class="title">Izmjena podataka <span>kupca</span></h1>
 
                                 <?php
@@ -38,77 +40,58 @@ include './init.php';
                                     $_GET['email'] = $row['email'];
                                 }
                                 ?>
-                                <form class="unos" action="ispravka_kupca.php" method="GET">
+                                <section id="container">
+                                    <h2>Id kupca: <?= $kupac_id ?></h2>
+                                    <form name="hongkiat" id="hongkiat-form" method="get" action="">
+                                        <div id="wrapping" class="clearfix">
+                                            <section id="aligned">
+                                                <input type="hidden" name="k_id" value="<?= $_GET['id'] ?>">
+                                                <h3>Ime: </h3>
+                                                <input type="text" name="ime" ptabindex="4" class="txtinput" value="<?= $_GET['ime'] ?>">
+                                                <h3>Prezime: </h3>
+                                                <input type="text" name="prezime" ptabindex="4" class="txtinput" value="<?= $_GET['prezime'] ?>">
+                                                <h3>Tvrtka: </h3>
+                                                <input type="text" name="tvrtka" ptabindex="4" class="txtinput" value="<?= $_GET['tvrtka'] ?>">
+                                                <h3>Adresa: </h3>
+                                                <input type="text" name="adresa" ptabindex="4" class="txtinput" value="<?= $_GET['adresa'] ?>">
+                                                <h3>Grad: </h3>
+                                                <input type="text" name="grad" ptabindex="4" class="txtinput" value="<?= $_GET['grad'] ?>">
+                                                <h3>Kontakt broj: </h3>
+                                                <input type="text" name="kontakt_broj" ptabindex="4" class="txtinput" value="<?= $_GET['kontakt_broj'] ?>">
+                                                <h3>E-mail: </h3>
+                                                <input type="email" name="email" ptabindex="4" class="txtinput" value="<?= $_GET['email'] ?>">
 
-                                    <label>Id: </label>
-                                    <input type="text" name="id" maxlength="30" value="<?= $_GET['id'] ?>">
-                                    <label>Tvrtka: </label>
-                                    <input type="text" name="tvrtka" maxlength="30" value="<?= $_GET['tvrtka'] ?>">
-                                    <br>
-                                    <label>Ime: </label>
-                                    <input type="text" name="ime" maxlength="30" value="<?= $_GET['ime'] ?>">
-                                    <br>
-                                    <label>Prezime: </label>
-                                    <input type="text" name="prezime" maxlength="30" value="<?= $_GET['prezime'] ?>">
-                                    <br>
-                                    <label>Adresa: </label>
-                                    <input type="text" name="adresa" maxlength="30" value="<?= $_GET['adresa'] ?>">
-                                    <br>
-                                    <label>Grad: </label>
-                                    <input type="text" name="grad" maxlength="30" value="<?= $_GET['grad'] ?>">
-                                    <br>
-                                    <label>Kontakt broj: </label>
-                                    <input type="text" name="kontakt_broj" maxlength="30" value="<?= $_GET['kontakt_broj'] ?>">
-                                    <br>
-                                    <label>E-mail: </label>
-                                    <input type="email" name="email" maxlength="30" value="<?= $_GET['email'] ?>">
-                                    <br>
-                                    <br><input type="submit" name="akcija" value="Izmijeni">
+                                                <section id="buttons">
+                                                    <input type="submit" name="akcija" id="submitbtn" class="submitbtn" tabindex="7" value="Unesi">
 
-
-                                </form>
-
-<?php
+                                                    <br style="clear:both;">
+                                                </section>
+                                            </section>
+                                    </form>
+                                </section>
 
 
-if(isset($_GET['akcija'])){
-    $id = $_GET['id'];
-    $tvrtka = $_GET['tvrtka'];
-    $ime = $_GET['ime'];
-    $prezime = $_GET['prezime'];
-    $adresa = $_GET['adresa'];
-    $grad = $_GET['grad'];
-    $kontakt_broj = $_GET['kontakt_broj'];
-    $email = $_GET['email'];
-    ispravka_kupca($id, $ime, $prezime, $tvrtka, $adresa, $grad, $email, $kontakt_broj);
-    header("location:kupci.php");
-    die("a ma");
-}
-  
-    
-    
-
-?>
+                                <?php
+                                if (isset($_GET['akcija'])) {
+                                    $id = $_GET['k_id'];
+                                    $tvrtka = $_GET['tvrtka'];
+                                    $ime = $_GET['ime'];
+                                    $prezime = $_GET['prezime'];
+                                    $adresa = $_GET['adresa'];
+                                    $grad = $_GET['grad'];
+                                    $kontakt_broj = $_GET['kontakt_broj'];
+                                    $email = $_GET['email'];
+                                    ispravka_kupca($id, $ime, $prezime, $tvrtka, $adresa, $grad, $email, $kontakt_broj);
+                                    header("location:kupci.php");
+                                    exit();
+                                }
+                                ?>
                                 <p>&nbsp;</p>
                                 <p>&nbsp;</p>
                             </div>
                         </div>
                     </div>
-                    <div class="right-out">
-                        <div class="right-in">
-                            <div class="right-panel">
-                                <div class="right-block">
-                                    <h2>Kategorije</h2>
-                                    <ul>
-                                        <li><a href="nova_intervencija.php">Nova intervencija</a></li>
-                                        <li><a href="novi_kupac.php">Novi kupac</a></li>
-                                        <li><a href="#">Novi ugovor</a></li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="sections">
                         <div class="section1">
                             <h3>Kupci</h3>

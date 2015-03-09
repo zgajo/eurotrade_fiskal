@@ -31,30 +31,7 @@ ob_start();
                                 <h1 class="title">Završavanje radnog<span> naloga</span></h1>
 
 
-                          <?php
-                               /* echo "<form  class='unos' action='' method='GET'>";
-                                $id = $_GET['id'];
-                                $result = intervencijaDet($id);
-                                while ($row = mysql_fetch_array($result)) {
-
-                                    echo "<label>ID</label>";
-                                    echo "<input name='i_id' value='" . $row['id'] . "'></input>";
-                                    echo "<label>Intervencija od: </label>";
-                                    echo "<input name='intervencija_od' value='" . $row['intervencija_od'] . "'></Input>";
-                                    echo "<label>Intervencija do: </label>";
-                                    echo "<input name='intervencija_do' value='" . $row['intervencija_do'] . "'></Input>";
-                                    echo "<label>Zatraženo: </label>";
-                                    echo "<input name='opis' value='" . $row['opis'] . "'></Input>";
-                                    echo "<label>Izvršeni servis: </label>";
-                                    echo "<input name='obavljeno' value='" . $row['obavljeno'] . "'></Input>";
-                                    echo "<label>Naplaćena šifra: </label>";
-                                    echo "<input name='sifra_naplate' value='" . $row['sifra_naplate'] . "'></Input>";
-                                    echo "<label>Kupac: </label>";
-                                    echo "<input value='" . $row['ime'] . ' ' . $row['prezime'] . ', ' . $row['tvrtka'] . "'></Input>";
-                                    echo "<input type='submit' name='akcija' value='Unesi'></input>";
-                                }
-                                echo "</form>";*/
-                                ?>
+                         
 
                                 <?php
                                 $id = filter_input(INPUT_GET, 'id');

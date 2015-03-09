@@ -1,5 +1,6 @@
 <?php
 include './init.php';
+ob_start();
 ?>
 
 
@@ -13,6 +14,7 @@ include './init.php';
         <meta name="description" content="Description of your site goes here">
         <meta name="keywords" content="Eurotrade, Servis, Eurotrade servis">
         <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="css/kontakt.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div class="main">
@@ -23,33 +25,34 @@ include './init.php';
                         <div class="left-in">
                             <div class="left-panel">
                                 <h1 class="title">Ubacite podatke <span>novoga kupca</span></h1>
-                                <form class="unos" action="novi_kupac.php" method="GET">
+                                <section id="container">
 
-                                    <label>Tvrtka: </label>
-                                    <input type="text" name="tvrtka" maxlength="30">
-                                    <br>
-                                    <label>Ime: </label>
-                                    <input type="text" name="ime" maxlength="30">
-                                    <br>
-                                    <label>Prezime: </label>
-                                    <input type="text" name="prezime" maxlength="30">
-                                    <br>
-                                    <label>Adresa: </label>
-                                    <input type="text" name="adresa" maxlength="30" required>
-                                    <br>
-                                    <label>Grad: </label>
-                                    <input type="text" name="grad" maxlength="30" required>
-                                    <br>
-                                    <label>Kontakt broj: </label>
-                                    <input type="text" name="kontakt_broj" maxlength="30" required>
-                                    <br>
-                                    <label>E-mail: </label>
-                                    <input type="email" name="email" maxlength="30">
-                                    <br>
-                                    <br><input type="submit" value="Unesi">
+                                    <form name="hongkiat" id="hongkiat-form" method="get" action="">
+                                        <div id="wrapping" class="clearfix">
+                                            <section id="aligned">
+                                                <h3>Ime: </h3>
+                                                <input type="text" name="ime" ptabindex="4" class="txtinput">
+                                                <h3>Prezime: </h3>
+                                                <input type="text" name="prezime" ptabindex="4" class="txtinput">
+                                                <h3>Tvrtka: </h3>
+                                                <input type="text" name="tvrtka" ptabindex="4" class="txtinput">
+                                                <h3>Adresa: </h3>
+                                                <input type="text" name="adresa" ptabindex="4" class="txtinput">
+                                                <h3>Grad: </h3>
+                                                <input type="text" name="grad" ptabindex="4" class="txtinput">
+                                                <h3>Kontakt broj: </h3>
+                                                <input type="text" name="kontakt_broj" ptabindex="4" class="txtinput">
+                                                <h3>E-mail: </h3>
+                                                <input type="email" name="email" ptabindex="4" class="txtinput">
 
+                                                <section id="buttons">
+                                                    <input type="submit" name="unesi" id="submitbtn" class="submitbtn" tabindex="7" value="Unesi">
 
-                                </form>
+                                                    <br style="clear:both;">
+                                                </section>
+                                            </section>
+                                    </form>
+                                </section>
                                 <?php
                                 if (!empty($_GET)) {
                                     $tvrtka = $_GET['tvrtka'];
@@ -62,6 +65,7 @@ include './init.php';
 
                                     unos_kupca($ime, $prezime, $tvrtka, $adresa, $grad, $email, $kontakt_broj);
                                     header("location:index.php");
+                                    exit();
                                 }
                                 ?>
                                 <p>&nbsp;</p>

@@ -9,7 +9,7 @@ function svi_kupci() {
 }
 
 function unos_kupca($ime, $prezime, $tvrtka, $adresa, $grad, $email, $kontakt_broj) {
-    mysql_query("INSERT INTO fisk_kupac (ime, prezime, tvrtka, adresa, grad email, kontakt_broj) VALUES ('$ime', '$prezime', '$tvrtka', '$adresa', '$grad', '$email', '$kontakt_broj')");
+    mysql_query("INSERT INTO fisk_kupac (ime, prezime, tvrtka, adresa, grad, email, kontakt_broj) VALUES ('$ime', '$prezime', '$tvrtka', '$adresa', '$grad', '$email', '$kontakt_broj')");
 }
 
 function kupacDet($id) {

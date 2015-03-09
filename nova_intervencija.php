@@ -39,7 +39,6 @@ ob_start();
                                                     }
                                                     ?>
                                                 </select>
-                                                
                                                 <h3>Intervenicija zatražena na datum: </h3>
                                                 <input type="date" type="text" name="intervencija_od" id="name"  autocomplete="off" tabindex="1" class="txtinput" >
                                                 
