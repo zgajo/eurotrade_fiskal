@@ -103,7 +103,7 @@ a:hover {
 }
 .content {
     width: 899px;
-    float: left;
+    /* float: left; */
     padding: 19px 20px 0px 20px;
 }
 .left-out {

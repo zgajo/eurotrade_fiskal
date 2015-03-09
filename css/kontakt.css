@@ -52,7 +52,7 @@ span.chyron { font-size: 1.2em; padding-top: 10px; }
 #hongkiat-form { box-sizing: border-box; }
 
 #hongkiat-form .txtinput { 
-    display: inline;
+    display: block;
     font-family: "Helvetica Neue", Arial, sans-serif;
     border-style: solid;
     border-width: 1px;
@@ -61,7 +61,7 @@ span.chyron { font-size: 1.2em; padding-top: 10px; }
     font-size: 1.55em;
     padding: 11px 25px;
     padding-left: 55px;
-    /* width: 50%; */
+    width: 90%;
     color: #777;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
@@ -132,9 +132,8 @@ span.chyron { font-size: 1.2em; padding-top: 10px; }
 #hongkiat-form #aligned { 
     box-sizing: border-box; 
     float: left; 
-    /* width: 450px; */ 
+    width: 450px; 
     margin-right: 50px;
-    display: block;
 }
 #hongkiat-form #aside {
     float: right;
