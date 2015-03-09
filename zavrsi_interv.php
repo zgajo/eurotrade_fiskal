@@ -115,17 +115,9 @@ ob_start();
                                     </form>
                                 </section>
                                 <?php
-                               /*
-                                if (isset($_GET[('akcija')])) {
-                                    $id=$_GET["i_id"];
-                                    $obavljeno = $_GET["obavljeno"];
-                                    $i_do = $_GET["intervencija_do"];
-                                    $sifra_naplate = $_GET["sifra_naplate"];
-                                   inter_update($id, $obavljeno,  $i_do, $sifra_naplate) or die(mysql_error());
-                                   header("location: intervencije.php");
-                                }*/
+                               
                                if (isset($_GET[('akcija')])){
-                                    $i_id=$_GET['i_id'];
+                                    $i_id=$_GET['i_id']; //i_id nesmije biti samo id jer se kolje sa id koji smo dobili iz prethodne stranice
                                     $obavljeno = $_GET['obavljeno'];
                                     $i_do = $_GET['intervencija_do'];
                                     $sifra_naplate = $_GET['sifra_naplate'];
