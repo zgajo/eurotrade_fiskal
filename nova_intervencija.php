@@ -30,8 +30,6 @@ ob_start();
                                     <form name="hongkiat" id="hongkiat-form" method="get" action="">
                                         <div id="wrapping" class="clearfix">
                                             <section id="aligned">
-                                                <h3>Intervenicija zatražena na datum: </h3>
-                                                <input type="date" type="text" name="intervencija_od" id="name"  autocomplete="off" tabindex="1" class="txtinput" >
                                                 <h3>Kupac</h3>
                                                 <select type="text" name="fisk_kupac_id" id="email" autocomplete="off" tabindex="2" class="txtinput" id="name" >
                                                     <?php
@@ -41,6 +39,10 @@ ob_start();
                                                     }
                                                     ?>
                                                 </select>
+                                                
+                                                <h3>Intervenicija zatražena na datum: </h3>
+                                                <input type="date" type="text" name="intervencija_od" id="name"  autocomplete="off" tabindex="1" class="txtinput" >
+                                                
                                                 <h3>Zatražena intervencija: </h3>
                                                 <input type="text" name="opis" id="telephone" ptabindex="4" class="txtinput">
 

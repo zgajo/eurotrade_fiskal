@@ -86,7 +86,7 @@ ob_start();
                                                 <h3>Intervencija zatvorena na datum:</h3>
                                                 <input type="date" name="intervencija_do" id="email" autocomplete="off" tabindex="2" class="txtinput"  value="<?=  $_GET['intervencija_do']?>">
                                                 <h3>Zatražena intervencija: </h3>
-                                                <input type="tel" name="opis" id="telephone" placeholder="<?=  $_GET['opis']?>" tabindex="4" class="txtinput" readonly="">
+                                                <input type="text" name="opis" id="telephone" placeholder="<?=  $_GET['opis']?>" tabindex="4" class="txtinput" readonly="">
                                                 <h3>Šifra naplate: </h3>
                                                 <input type="text" name="sifra_naplate" id="telephone"  tabindex="4" class="txtinput" value="<?=  $_GET['sifra_naplate']?>">
                                                 <h3>Izvršeni servis:</h3>
