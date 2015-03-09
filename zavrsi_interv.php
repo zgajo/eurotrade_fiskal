@@ -30,8 +30,8 @@ include 'init.php';
                                 <h1 class="title">Završavanje radnog<span> naloga</span></h1>
 
 
-                                <?php
-                                echo "<form  class='unos' action='' method='GET'>";
+                          <?php
+                               /* echo "<form  class='unos' action='' method='GET'>";
                                 $id = $_GET['id'];
                                 $result = intervencijaDet($id);
                                 while ($row = mysql_fetch_array($result)) {
@@ -52,8 +52,9 @@ include 'init.php';
                                     echo "<input value='" . $row['ime'] . ' ' . $row['prezime'] . ', ' . $row['tvrtka'] . "'></Input>";
                                     echo "<input type='submit' name='akcija' value='Unesi'></input>";
                                 }
-                                echo "</form>";
+                                echo "</form>";*/
                                 ?>
+
                                 <?php
                                 $id = $_GET['id'];
                                 $result = intervencijaDet($id);
@@ -78,15 +79,16 @@ include 'init.php';
                                     <form name="hongkiat" id="hongkiat-form" method="get" action="">
                                         <div id="wrapping" class="clearfix">
                                             <section id="aligned">
-                                                <input type="text" name="name" id="name" placeholder="<?=  date_format($_GET['intervencija_od'], ('d.m.Y'))?>" autocomplete="off" tabindex="1" class="txtinput" required="">
-
-                                                <input type="email" name="email" id="email" placeholder="Vaša e-mail adresa" autocomplete="off" tabindex="2" class="txtinput" required="">
-
-                                                <input type="tel" name="telephone" id="telephone" placeholder="Kontakt broj" tabindex="4" class="txtinput">
-
-                                                <textarea name="message" id="message" placeholder="Izvršeni servis..." tabindex="5" class="txtblock"></textarea>
+                                                <h3>Intervenicija zatražena na datum: </h3>
+                                                <input type="text" name="name" id="name" placeholder="<?=  $_GET['intervencija_od']?>" autocomplete="off" tabindex="1" class="txtinput" required="">
+                                                <h3>Intervencija zatvorena na datum:</h3>
+                                                <input type="email" name="email" id="email" autocomplete="off" tabindex="2" placeholder="<?=  $_GET['intervencija_od']?>" class="txtinput" required="" value="<?=  $_GET['intervencija_od']?>">
+                                                <h3>Zatražena intervencija: </h3>
+                                                <input type="tel" name="telephone" id="telephone" placeholder="<?=  $_GET['opis']?>" tabindex="4" class="txtinput">
+                                                <h3>Izvršeni servis:</h3>
+                                                <textarea name="obavljeno" id="message" placeholder="<?=  $_GET['obavljeno']?>" tabindex="5" class="txtblock"></textarea>
                                                 <section id="buttons">
-                                                    <input type="submit" name="submit" id="submitbtn" class="submitbtn" tabindex="7" value="Pošalji!">
+                                                    <input type="submit" name="akcija" id="submitbtn" class="submitbtn" tabindex="7" value="Unesi">
 
                                                     <br style="clear:both;">
                                                 </section>
