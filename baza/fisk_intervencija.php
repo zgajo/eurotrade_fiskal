@@ -35,9 +35,7 @@ function inter_update($id, $obavljeno,  $i_do, $sifra_naplate){
     mysql_query("UPDATE fisk_intervencija 
              SET obavljeno = '$obavljeno',
             intervencija_do = '$i_do',
-             sifra_naplate = '$sifra_naplate',
-             fisk_user_id = '1'
-             WHERE id = '$id'");
+             sifra_naplate = '$sifra_naplate' WHERE id = '$id'");
 }
 
 
