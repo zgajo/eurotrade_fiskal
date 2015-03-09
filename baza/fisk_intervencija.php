@@ -31,11 +31,15 @@ function nova_intervencija($int_od, $fisk_kupac_id, $opis, $user_id){
 }
 
 
-function inter_update($id, $obavljeno,  $i_do, $sifra_naplate){
-    mysql_query("UPDATE fisk_intervencija 
+function inter_update($i_id, $obavljeno,  $i_do, $sifra_naplate){
+    $update = ("UPDATE fisk_intervencija 
              SET obavljeno = '$obavljeno',
             intervencija_do = '$i_do',
-             sifra_naplate = '$sifra_naplate' WHERE id = '$id'");
+             sifra_naplate = '$sifra_naplate'
+                 
+                 WHERE id = '$i_id'");
+    mysql_query($update);
+    
 }
 
 

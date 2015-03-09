@@ -1,5 +1,6 @@
 <?php
 include 'init.php';
+ob_start();
 ?>
 
 
@@ -13,6 +14,7 @@ include 'init.php';
         <meta name="description" content="Description of your site goes here">
         <meta name="keywords" content="Eurotrade, Servis, Eurotrade servis">
         <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="css/kontakt.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div class="main">
@@ -23,37 +25,59 @@ include 'init.php';
                         <div class="left-in">
                             <div class="left-panel">
                                 <h1 class="title">Nova <span>intervencija</span></h1>
-                                <form class="unos" action="" method="GET">
+                                <section id="container">
 
-                                    <label>Intervencija zatražena: </label>
-                                    <input name="intervencija_od" value="<?php echo date("d.m.Y"); ?>">
-                                    <br>
-                                    <label>Kupac</label>
-                                    <select name="fisk_kupac_id"> 
-                                        <?php  
-                                        $result = ListKupac();
-                                        while ($row = mysql_fetch_array($result)){                                        
-                                         echo "<option value='" . $row["id"] . "'>" . $row["tvrtka"] . ", ".$row["ime"]." ".$row["prezime"]."</option>";
-                                        
-                                        }
-                                        ?>
-                                    </select>
-                                    <br>
-                                    <label>Zatražena intervencija: </label>
-                                    <input type="text" name="opis" maxlength="100">
-                                    <br>
-                                    <br><input name="unesi" type="submit" value="Unesi">
+                                    <form name="hongkiat" id="hongkiat-form" method="get" action="">
+                                        <div id="wrapping" class="clearfix">
+                                            <section id="aligned">
+                                                <h3>Intervenicija zatražena na datum: </h3>
+                                                <input type="date" type="text" name="intervencija_od" id="name"  autocomplete="off" tabindex="1" class="txtinput" >
+                                                <h3>Kupac</h3>
+                                                <select type="text" name="fisk_kupac_id" id="email" autocomplete="off" tabindex="2" class="txtinput" id="name" >
+                                                    <?php
+                                                    $result = ListKupac();
+                                                    while ($row = mysql_fetch_array($result)) {
+                                                        echo "<option value='" . $row["id"] . "'>" . $row["tvrtka"] . ", " . $row["ime"] . " " . $row["prezime"] . "</option>";
+                                                    }
+                                                    ?>
+                                                </select>
+                                                <h3>Zatražena intervencija: </h3>
+                                                <input type="text" name="opis" id="telephone" ptabindex="4" class="txtinput">
 
-                                </form>
+                                                <section id="buttons">
+                                                    <input type="submit" name="unesi" id="submitbtn" class="submitbtn" tabindex="7" value="Unesi">
+
+                                                    <br style="clear:both;">
+                                                </section>
+                                            </section>
+                                    </form>
+                                </section>
+                                <!--  <form class="unos" action="" method="GET">
+  
+                                      <label>Intervencija zatražena: </label>
+                                      <input name="intervencija_od" value="<?php echo date("d.m.Y"); ?>">
+                                      <br>
+                                      <label>Kupac</label>
+                                      <select name="fisk_kupac_id"> 
+                                          
+                                      </select>
+                                      <br>
+                                      <label>Zatražena intervencija: </label>
+                                      <input type="text" name="opis" maxlength="100">
+                                      <br>
+                                      <br><input name="unesi" type="submit" value="Unesi">
+  
+                                  </form>-->
 
                                 <?php
                                 if (!empty($_GET)) {
-                                $int_od = $_GET['intervencija_od'];
-                                $fisk_kupac_id = $_GET['fisk_kupac_id'];
-                                $opis = $_GET['opis'];
-                                $user_id = 1;
-                                nova_intervencija($int_od, $fisk_kupac_id, $opis, $user_id);
-                                header("location:intervencije.php");
+                                    $int_od = $_GET['intervencija_od'];
+                                    $fisk_kupac_id = $_GET['fisk_kupac_id'];
+                                    $opis = $_GET['opis'];
+                                    $user_id = 1;
+                                    nova_intervencija($int_od, $fisk_kupac_id, $opis, $user_id);
+                                    header("location:intervencije.php");
+                                    exit();
                                 }
                                 ?>
 
@@ -116,7 +140,7 @@ include 'init.php';
                         </div>
                     </div>
                 </div>
-<?php include 'dijeloviHTML/footer.php'; ?>
+                <?php include 'dijeloviHTML/footer.php'; ?>
             </div>
         </div>
 

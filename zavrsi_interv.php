@@ -1,10 +1,8 @@
 <?php
 include 'init.php';
+ob_start();
 ?>
-<?php 
-	#Bez ovoga mi PHP naredba header("location: lead.php"); nije radila ispravno nakon što sam prebacio stranice na hosting.
-	#Nakon googlanja našao sam ovo riješenje;
-	ob_start();?>
+
 
 <!DOCTYPE html>
 <html>
@@ -78,18 +76,19 @@ include 'init.php';
                                 }
                                 ?>
                                 <section id="container">
-                                    <h2>Radni nalog: <?=$_GET['id']?></h2>
+                                    <h2>Radni nalog: <?=$id?></h2>
                                     <form name="hongkiat" id="hongkiat-form" method="get" action="">
                                         <div id="wrapping" class="clearfix">
                                             <section id="aligned">
+                                                <input type="hidden" name="i_id" value="<?=$_GET['id']?>">
                                                 <h3>Intervenicija zatražena na datum: </h3>
-                                                <input type="date" type="text" name="name" id="name" placeholder="<?=  $_GET['intervencija_od']?>" value="<?=  $_GET['intervencija_od']?>" autocomplete="off" tabindex="1" class="txtinput" >
+                                                <input type="date" type="text" name="intervencija_od" id="name" value="<?=  $_GET['intervencija_od']?>" autocomplete="off" tabindex="1" class="txtinput" readonly>
                                                 <h3>Intervencija zatvorena na datum:</h3>
-                                                <input type="date" name="email" id="email" autocomplete="off" tabindex="2" placeholder="<?=  $_GET['intervencija_do']?>" class="txtinput" required="" value="<?=  $_GET['intervencija_do']?>">
+                                                <input type="date" name="intervencija_do" id="email" autocomplete="off" tabindex="2" class="txtinput"  value="<?=  $_GET['intervencija_do']?>">
                                                 <h3>Zatražena intervencija: </h3>
-                                                <input type="tel" name="telephone" id="telephone" placeholder="<?=  $_GET['opis']?>" tabindex="4" class="txtinput" value="<?=  $_GET['opis']?>">
+                                                <input type="tel" name="opis" id="telephone" placeholder="<?=  $_GET['opis']?>" tabindex="4" class="txtinput" readonly="">
                                                 <h3>Šifra naplate: </h3>
-                                                <input type="text" name="sifra_naplate" id="telephone" placeholder="<?=  $_GET['sifra_naplate']?>" tabindex="4" class="txtinput" value="<?=  $_GET['sifra_naplate']?>">
+                                                <input type="text" name="sifra_naplate" id="telephone"  tabindex="4" class="txtinput" value="<?=  $_GET['sifra_naplate']?>">
                                                 <h3>Izvršeni servis:</h3>
                                                 <textarea  name="obavljeno" id="message"  placeholder="<?=  $_GET['obavljeno']?>" tabindex="5" class="txtblock"></textarea>
                                                 <section id="buttons">
@@ -116,26 +115,26 @@ include 'init.php';
                                     </form>
                                 </section>
                                 <?php
-                               
-                                /*if (isset($_GET[('akcija')])) {
-                                    $id=$_GET["id"];
+                               /*
+                                if (isset($_GET[('akcija')])) {
+                                    $id=$_GET["i_id"];
                                     $obavljeno = $_GET["obavljeno"];
                                     $i_do = $_GET["intervencija_do"];
                                     $sifra_naplate = $_GET["sifra_naplate"];
                                    inter_update($id, $obavljeno,  $i_do, $sifra_naplate) or die(mysql_error());
                                    header("location: intervencije.php");
                                 }*/
-                                if (!empty($_GET)){
-                                    $id=$_GET['id'];
+                               if (isset($_GET[('akcija')])){
+                                    $i_id=$_GET['i_id'];
                                     $obavljeno = $_GET['obavljeno'];
                                     $i_do = $_GET['intervencija_do'];
                                     $sifra_naplate = $_GET['sifra_naplate'];
-                                    $akcija = $_GET['akcija'];
-                                    if ($akcija == "Unesi"){
-                                    inter_update($id, $obavljeno,  $i_do, $sifra_naplate)  or die(mysql_error());
-                                    header('location: intervencije.php');
-                                    exit();
-                                    }
+                                    
+                                   
+                                    inter_update($i_id, $obavljeno,  $i_do, $sifra_naplate);
+                                    header("location: intervencije.php");
+                                     die(mysql_error());
+                                    
                                 }
                                 ?>
                                 <p>&nbsp;</p>
