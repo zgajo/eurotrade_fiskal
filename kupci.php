@@ -28,19 +28,19 @@ include 'init.php';
                                 echo '<h1 style="display:inline">Kupci</h1>';
                                 echo '<a href="novi_kupac.php"><button style="display:inline; float:right;">Novi kupac</button></a>';
                                 $result = svi_kupci();
-                                echo "<table border='1' style='color:green; font-size:14px;'>
-                                        <tr>
-                                        <th>ID</th>
-                                        <th>Ime</th>
-                                        <th>Prezime</th>
-                                        <th>Tvrtka</th>
-                                        <th>Adresa</th>
-                                        <th>Grad</th>
-                                        <th>Kontakt broj</th>
-                                        <th>E-mail</th>
-                                        <th>Intervencije</th>
-                                        <th>Promjena podataka</th>
-                                        </tr>";
+                                echo "<table border='1' style='color:green; font-size:14px;'>";
+                                        echo "<tr>";
+                                        echo "<th>ID</th>";
+                                        echo "<th>Ime</th>";
+                                        echo "<th>Prezime</th>";
+                                        echo "<th>Tvrtka</th>";
+                                        echo "<th>Adresa</th>";
+                                        echo "<th>Grad</th>";
+                                        echo "<th>Kontakt broj</th>";
+                                        echo "<th>E-mail</th>";
+                                        echo "<th>Intervencije</th>";
+                                        echo "<th>Promjena podataka</th>";
+                                        echo "</tr>";
                                 
                                 while ($row = mysql_fetch_array($result)) {
                                     echo "<tr>";
@@ -54,7 +54,7 @@ include 'init.php';
                                     echo "<td>" . $row['email'] . "</td>";
                                     echo "<td><a  href='intervencijaKupDet.php?fisk_kupac_id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Detalji</B></a></td>";
                                     echo "<td><a href='ispravka_kupca.php?fisk_kupac_id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Ispravka</B></a></td>";
-                                    echo "</a></tr>";
+                                    echo "</tr>";
                                 }
                                 
                                 echo "</table>";
