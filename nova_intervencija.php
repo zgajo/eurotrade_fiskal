@@ -43,7 +43,7 @@ ob_start();
                                                 <input type="date" type="text" name="intervencija_od" id="name"  autocomplete="off" tabindex="1" class="txtinput" >
                                                 
                                                 <h3>Zatražena intervencija: </h3>
-                                                <input type="text" name="opis" id="telephone" ptabindex="4" class="txtinput">
+                                                <input type="text" name="zatrazeno" id="telephone" ptabindex="4" class="txtinput">
 
                                                 <section id="buttons">
                                                     <input type="submit" name="unesi" id="submitbtn" class="submitbtn" tabindex="7" value="Unesi">
@@ -64,7 +64,7 @@ ob_start();
                                       </select>
                                       <br>
                                       <label>Zatražena intervencija: </label>
-                                      <input type="text" name="opis" maxlength="100">
+                                      <input type="text" name="zatrazeno" maxlength="100">
                                       <br>
                                       <br><input name="unesi" type="submit" value="Unesi">
   
@@ -74,9 +74,9 @@ ob_start();
                                 if (!empty($_GET)) {
                                     $int_od = $_GET['intervencija_od'];
                                     $fisk_kupac_id = $_GET['fisk_kupac_id'];
-                                    $opis = $_GET['opis'];
+                                    $zatrazeno = $_GET['zatrazeno'];
                                     $user_id = 1;
-                                    nova_intervencija($int_od, $fisk_kupac_id, $opis, $user_id);
+                                    nova_intervencija($int_od, $fisk_kupac_id, $zatrazeno, $user_id);
                                     header("location:intervencije.php");
                                     exit();
                                 }

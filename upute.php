@@ -19,26 +19,11 @@ include 'init.php';
             <div class="page-out">
                 <?php include 'dijeloviHTML/header.php';?>
                 <div class="content">
-                    <div class="left-out">
-                        <div class="left-in">
-                            <div class="left-panel">
+                    <div div style="width: 900px;">
+                        <div>
+                            <div>
                                 <h1 class="title">Ubacite podatke <span>novoga kupca</span></h1>
-                                <div class="section1">
-                            <h3>Kratke upute</h3>
-                            <p>&nbsp;</p>
-                            <p>Naša uputstva<br>
-                            </p>
-                            <p>&nbsp;</p>
-                            <p><a href="#" class="more">Skini</a></p>
-                        </div>
-                        <div class="section2">
-                            <h3>Digitron upute</h3>
-                            <p>&nbsp;</p>
-                            <p>Digitronove detaljne upute<br>
-                            </p>
-                            <p>&nbsp;</p>
-                            <p><a href="#" class="more">Skini</a></p>
-                        </div>
+                                
                                 <p>&nbsp;</p>
                                 <p>&nbsp;</p>
                             </div>

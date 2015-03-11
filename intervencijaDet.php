@@ -41,7 +41,7 @@ include 'init.php';
                                     echo "<label>Naplaćena šifra:</label>";
                                     echo "<input name='sifra_naplate' value=" . $row['sifra_naplate'] . ">";
                                     echo "<label>Zatraženi servis:</label>";
-                                    echo "<input name='opis' value=" . $row['opis'] . ">";
+                                    echo "<input name='zatrazeno' value=" . $row['zatrazeno'] . ">";
                                     echo "<label>Obavljeni servis:</label>";
                                     echo "<input name='obavljeno' value=" . $row['obavljeno'] . ">";
                                 }

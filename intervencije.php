@@ -37,7 +37,7 @@ include 'init.php';
                                         <th>Zatvori rn</th>
                                         <th>ID</th>
                                         <th>Kupac</th>
-                                        <th>Opis intervencije:</th>
+                                        <th>Zatraženi servis:</th>
                                         <th>Intervencija od:</th>
                                         <th>Intervencija do</th>
                                         <th>Naplaćena šifra</th>
@@ -50,7 +50,7 @@ include 'init.php';
                                     echo "<td><a  href='zavrsi_interv.php?id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Izmijeni rn</B></a></td>";
                                     echo "<td>" . $row['id'] . "</td>";
                                     echo "<td>" . $row['ime'] . ' ' . $row['prezime'] . ', ' . $row['tvrtka'] . "</td>";
-                                    echo "<td>" . $row['opis'] . "</td>";
+                                    echo "<td>" . $row['zatrazeno'] . "</td>";
                                     echo "<td>" . $row['intervencija_od'] . "</td>";
                                     echo "<td>" . $row['intervencija_do'] . "</td>";
                                     echo "<td>" . $row['sifra_naplate'] . "</td>";

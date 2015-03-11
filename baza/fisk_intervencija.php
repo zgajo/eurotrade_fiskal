@@ -25,8 +25,8 @@ function intervencijaKupDet($kupac_id){
     }
     return $query;
 }
-function nova_intervencija($int_od, $fisk_kupac_id, $opis, $user_id){
-    mysql_query("INSERT INTO fisk_intervencija (opis, intervencija_od, fisk_kupac_id, fisk_user_id) VALUES ('$opis', '$int_od', '$fisk_kupac_id', '$user_id')");
+function nova_intervencija($int_od, $fisk_kupac_id, $zatrazeno, $user_id){
+    mysql_query("INSERT INTO fisk_intervencija (zatrazeno, intervencija_od, fisk_kupac_id, fisk_user_id) VALUES ('$zatrazeno', '$int_od', '$fisk_kupac_id', '$user_id')");
     
 }
 

@@ -40,7 +40,7 @@ ob_start();
                                     $_GET['id'] = $row['id'];
                                     $_GET['intervencija_od'] = $row['intervencija_od'];
                                     $_GET['intervencija_do'] = $row['intervencija_do'];
-                                    $_GET['opis'] = $row['opis'];
+                                    $_GET['zatrazeno'] = $row['zatrazeno'];
                                     $_GET['obavljeno'] = $row['obavljeno'];
                                     $_GET['sifra_naplate'] = $row['sifra_naplate'];
                                     $_GET['ime'] = $row['ime'];
@@ -59,11 +59,11 @@ ob_start();
                                             <section id="aligned">
                                                 <input type="hidden" name="i_id" value="<?=$_GET['id']?>">
                                                 <h3>Intervenicija zatražena na datum: </h3>
-                                                <input type="date" type="text" name="intervencija_od" id="name" value="<?=  $_GET['intervencija_od']?>" autocomplete="off" tabindex="1" class="txtinput" readonly>
+                                                <input type="datetime" type="text" name="intervencija_od" id="name" value="<?=  $_GET['intervencija_od']?>" autocomplete="off" tabindex="1" class="txtinput" readonly>
                                                 <h3>Intervencija zatvorena na datum:</h3>
                                                 <input type="date" name="intervencija_do" id="email" autocomplete="off" tabindex="2" class="txtinput"  value="<?=  $_GET['intervencija_do']?>">
                                                 <h3>Zatražena intervencija: </h3>
-                                                <input type="text" name="opis" id="telephone" placeholder="<?=  $_GET['opis']?>" tabindex="4" class="txtinput" readonly="">
+                                                <input type="text" name="zatrazeno" id="telephone" placeholder="<?=  $_GET['zatrazeno']?>" tabindex="4" class="txtinput" readonly="">
                                                 <h3>Šifra naplate: </h3>
                                                 <input type="text" name="sifra_naplate" id="telephone"  tabindex="4" class="txtinput" value="<?=  $_GET['sifra_naplate']?>">
                                                 <h3>Izvršeni servis:</h3>

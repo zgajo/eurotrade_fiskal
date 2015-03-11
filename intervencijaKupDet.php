@@ -30,7 +30,7 @@ include 'init.php';
                                 echo "<table border='1' style='color:green; font-size:14px;'>
                                         <tr>
                                         <th>ID</th>
-                                        <th>opis</th>
+                                        <th>Zatraženo</th>
                                         <th>Obavljeno</th>
                                         <th>Zatražena</th>
                                         <th>Izvršena</th>
@@ -43,7 +43,7 @@ include 'init.php';
                                 while ($row = mysql_fetch_array($result)) {
                                     echo "<tr>";
                                     echo "<td>" . $row['id'] . "</td>";
-                                    echo "<td>" . $row['opis'] . "</td>";
+                                    echo "<td>" . $row['zatrazeno'] . "</td>";
                                     echo "<td>" . $row['obavljeno'] . "</td>";
                                     echo "<td>" . $row['intervencija_od'] . "</td>";
                                     echo "<td>" . $row['intervencija_do'] . "</td>";
