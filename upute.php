@@ -23,7 +23,34 @@ include 'init.php';
                         <div>
                             <div>
                                 <h1 class="title">Ubacite podatke <span>novoga kupca</span></h1>
+                                <?php
+                                echo '<h1 style="display:inline">Kupci</h1>';
+                                echo '<a href="novi_kupac.php"><button style="display:inline; float:right;">Novi kupac</button></a>';
+                                $result = svi_ugovori();
+                                echo "<table border='1' style='color:green; font-size:14px;'>";
+                                        echo "<tr>";
+                                        echo "<th>ID</th>";
+                                        echo "<th>Trajanje</th>";
+                                        echo "<th>Datum od</th>";
+                                        echo "<th>Datum do</th>";
+                                        echo "<th>Cijena</th>";
+                                        echo "<th>Kupac</th>";
+                                        echo "</tr>";
                                 
+                                while ($row = mysql_fetch_array($result)) {
+                                    echo "<tr>";
+                                    echo "<td>" . $row['id'] . "</td>";
+                                    echo "<td>" . $row['trajanje'] . "</td>";
+                                    echo "<td>" . $row['dat_od'] . "</td>";
+                                    echo "<td>" . $row['dat_od'] . "</td>";
+                                    echo "<td>" . $row['cijena'] . ' mj.'."</td>";
+                                    echo "<td><a href='ispravka_kupca.php?fisk_kupac_id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Detalji</B></a></td>";
+                                    echo "<td><a href='izmjena_ugovora.php?id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Izmjena</B></a></td>";
+                                    echo "</tr>";
+                                }
+                                
+                                echo "</table>";
+                                ?>
                                 <p>&nbsp;</p>
                                 <p>&nbsp;</p>
                             </div>
