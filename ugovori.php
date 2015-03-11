@@ -22,7 +22,7 @@ include 'init.php';
                     <div div style="width: 900px;">
                         <div>
                             <div>
-                                <h1 class="title">Ubacite podatke <span>novoga kupca</span></h1>
+                                <h1 class="title">Ugovori</h1>
                                 <?php
                                 echo '<h1 style="display:inline">Kupci</h1>';
                                 echo '<a href="novi_kupac.php"><button style="display:inline; float:right;">Novi kupac</button></a>';
