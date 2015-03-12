@@ -44,7 +44,7 @@ include 'init.php';
                                     echo "<td>" . $row['dat_od'] . "</td>";
                                     echo "<td>" . $row['dat_od'] . "</td>";
                                     echo "<td>" . $row['cijena'] . ' mj.'."</td>";
-                                    echo "<td><a href='ispravka_kupca.php?fisk_kupac_id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Detalji</B></a></td>";
+                                    echo "<td><a href='ispravka_kupca.php?fisk_kupac_id=" . $row['id'] . "'><B>" . $row["ime"] .' '.$row['prezime']. "</B></a></td>";
                                     echo "<td><a href='izmjena_ugovora.php?id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Izmjena</B></a></td>";
                                     echo "</tr>";
                                 }
