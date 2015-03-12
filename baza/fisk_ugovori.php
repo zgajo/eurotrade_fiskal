@@ -8,6 +8,10 @@ function svi_ugovori() {
     return $query;
 }
 
+function novi_ugovor($trajanje, $dat_od, $cijena, $fisk_kupac_id){
+   mysql_query("INSERT INTO fisk_ugovor (trajanje, cijena, dat_od, fisk_kupac_id) VALUES ('$trajanje','$cijena','$dat_od','$fisk_kupac_id')");
+}
+
 function ispravka_ugovora($ugovor_id){
   $query = mysql_query("SELECT * FROM fisk_ugovor WHERE id = '$ugovor_id'");  
   if (!$query) {

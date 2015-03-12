@@ -7,7 +7,7 @@ include 'init.php';
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Novi kupac</title>
+        <title>Ugovori</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="description" content="Description of your site goes here">
@@ -24,8 +24,7 @@ include 'init.php';
                             <div>
                                 <h1 class="title">Ugovori</h1>
                                 <?php
-                                echo '<h1 style="display:inline">Kupci</h1>';
-                                echo '<a href="novi_kupac.php"><button style="display:inline; float:right;">Novi kupac</button></a>';
+                                echo '<a href="novi_ugovor.php"><button style="display:inline; float:right;">Novi ugovor</button></a>';
                                 $result = svi_ugovori();
                                 echo "<table border='1' style='color:green; font-size:14px;'>";
                                         echo "<tr>";
@@ -40,10 +39,10 @@ include 'init.php';
                                 while ($row = mysql_fetch_array($result)) {
                                     echo "<tr>";
                                     echo "<td>" . $row['id'] . "</td>";
-                                    echo "<td>" . $row['trajanje'] . "</td>";
+                                    echo "<td>" . $row['trajanje'] . ' mj.'. "</td>";
                                     echo "<td>" . $row['dat_od'] . "</td>";
                                     echo "<td>" . $row['dat_od'] . "</td>";
-                                    echo "<td>" . $row['cijena'] . ' mj.'."</td>";
+                                    echo "<td>" . $row['cijena'] . ' kn'."</td>";
                                     echo "<td><a href='ispravka_kupca.php?fisk_kupac_id=" . $row['id'] . "'><B>" . $row["ime"] .' '.$row['prezime']. "</B></a></td>";
                                     echo "<td><a href='izmjena_ugovora.php?id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Izmjena</B></a></td>";
                                     echo "</tr>";
@@ -56,21 +55,7 @@ include 'init.php';
                             </div>
                         </div>
                     </div>
-                    <div class="right-out">
-                        <div class="right-in">
-                            <div class="right-panel">
-                                <div class="right-block">
-                                    <h2>Kategorije</h2>
-                                    <ul>
-                                        <li><a href="#">Nova intervencija</a></li>
-                                        <li><a href="novi_kupac.php">Novi kupac</a></li>
-                                        <li><a href="#">Novi ugovor</a></li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="sections">
                         <div class="section1">
                             <h3>Kupci</h3>
