@@ -41,7 +41,7 @@ include 'init.php';
                                     echo "<td>" . $row['id'] . "</td>";
                                     echo "<td>" . $row['trajanje'] . ' mj.'. "</td>";
                                     echo "<td>" . $row['dat_od'] . "</td>";
-                                    echo "<td>" . $row['dat_od'] . "</td>";
+                                    echo "<td>" . $row['dat_do'] . "</td>";
                                     echo "<td>" . $row['cijena'] . ' kn'."</td>";
                                     echo "<td><a href='ispravka_kupca.php?fisk_kupac_id=" . $row['id'] . "'><B>" . $row["ime"] .' '.$row['prezime']. "</B></a></td>";
                                     echo "<td><a href='izmjena_ugovora.php?id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Izmjena</B></a></td>";
@@ -103,21 +103,3 @@ include 'init.php';
     </body>
 </html>
 
-
-
-<?php
-if (!empty($_GET)) {
-    $tvrtka = $_GET['tvrtka'];
-    $ime = $_GET['ime'];
-    $prezime = $_GET['prezime'];
-    $adresa = $_GET['adresa'];
-    $grad = $_GET['grad'];
-    $kontakt_broj = $_GET['kontakt_broj'];
-    $email = $_GET['email'];
-    
-    unos_kupca( $ime, $prezime,$tvrtka, $adresa, $grad, $kontakt_broj, $email);
-    header("location:index.php");
-    
-    
-}
-?>

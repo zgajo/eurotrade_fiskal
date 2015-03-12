@@ -7,6 +7,7 @@ body {
     background-repeat: repeat-x;
     background-position: left top;
     margin: 0px;
+    height: 100%;
 }
 h1, h2, h3, h4, h5, h6, p, ul, ol, li, form, input, textarea {
     padding: 0px;
