@@ -34,6 +34,7 @@ ob_start();
                                                 <input type="number" name="trajanje" ptabindex="4" class="txtinput" required="">
                                                 <h3>Početak trajanja ugovora: </h3>
                                                 <input type="date" name="dat_od" ptabindex="4" class="txtinput" required="">
+                                                <input type="date" name="dat_do" hidden="">
                                                 <h3>Cijena (kuna): </h3>
                                                 <input type="number" step="any" name="cijena" ptabindex="4" class="txtinput" required="">
                                                 <h3>Kupac</h3>
@@ -61,8 +62,11 @@ ob_start();
                                     $dat_od = $_GET['dat_od'];
                                     $cijena = $_GET['cijena'];
                                     $fisk_kupac_id = $_GET['fisk_kupac_id'];
-
-                                   novi_ugovor($trajanje, $dat_od, $cijena, $fisk_kupac_id);
+                                    $date = $dat_od;
+                                    $dat_do = strtotime ( ("+$trajanje months") , strtotime ( $date ) ) ;
+                                    $dat_do = date('Y-m-j', $dat_do);
+                                   novi_ugovor($trajanje, $dat_od, $dat_do, $cijena, $fisk_kupac_id);
+                                   
                                     header("location:ugovori.php");
                                     exit();
                                 }
