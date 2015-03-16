@@ -21,10 +21,3 @@ function ispravka_ugovora($ugovor_id){
 }
 
 
-function datum_do($trajanje, $dat_od){
-    $query = mysql_query("date(strtotime('+$trajanje month', strtotime($dat_od)))");
-    if (!$query) {
-        die('Invalid query: ' . mysql_error());
-    }
-    return $query;
-}
