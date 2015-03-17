@@ -245,8 +245,6 @@ a:hover {
     width: 899px;
     height: 184px;
     float: left;
-    margin-top: 50px;
-    margin-bottom: 50px;
 }
 
 .sections2 {
@@ -328,6 +326,7 @@ footer{
     margin-left: auto;
     margin-right: auto;
     width: 899px;
+    clear: both;
 }
 
 .footer {
@@ -341,7 +340,7 @@ footer{
     margin-left: auto;
     margin-right: auto;
     bottom:0px;
-    position: absolute;
+    /* position: absolute; */
 }
 
 
