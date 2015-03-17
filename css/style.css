@@ -9,6 +9,10 @@ body {
     margin: 0px;
     height: 100%;
 }
+html{
+    margin: 0px;
+    height: 100%;  
+}
 h1, h2, h3, h4, h5, h6, p, ul, ol, li, form, input, textarea {
     padding: 0px;
     margin: 0px;
@@ -27,12 +31,17 @@ a:hover {
     background-position: left bottom;
     width: 100%;
     float: left;
+    /* min-height: 100%; */
+    
 }
+
+
 .page-out {
     width: 939px;
     margin: 0px auto;
     padding-top: 8px;
 }
+
 
 .header {
     width: 899px;
@@ -106,7 +115,10 @@ a:hover {
     width: 899px;
     /* float: left; */
     padding: 19px 20px 0px 20px;
+  
 }
+
+
 .left-out {
     background-image: url(../images/body-rept.jpg);
     background-repeat: repeat-y;
@@ -281,6 +293,9 @@ a.more:hover {
     color: #333333;
     text-decoration: underline;
 }
+footer{
+}
+
 .footer {
     background-image: url(../images/footer-img.jpg);
     background-repeat: no-repeat;
@@ -290,6 +305,8 @@ a.more:hover {
     float: left;
     padding: 0px 20px;
 }
+
+
 .footer-left {
     font-size: 11px;
     color: #FFFFFF;

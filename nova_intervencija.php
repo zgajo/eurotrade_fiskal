@@ -53,22 +53,7 @@ ob_start();
                                             </section>
                                     </form>
                                 </section>
-                                <!--  <form class="unos" action="" method="GET">
-  
-                                      <label>Intervencija zatražena: </label>
-                                      <input name="intervencija_od" value="<?php echo date("d.m.Y"); ?>">
-                                      <br>
-                                      <label>Kupac</label>
-                                      <select name="fisk_kupac_id"> 
-                                          
-                                      </select>
-                                      <br>
-                                      <label>Zatražena intervencija: </label>
-                                      <input type="text" name="zatrazeno" maxlength="100">
-                                      <br>
-                                      <br><input name="unesi" type="submit" value="Unesi">
-  
-                                  </form>-->
+                               
 
                                 <?php
                                 if (!empty($_GET)) {
@@ -95,51 +80,14 @@ ob_start();
                                     <ul>
                                         <li><a href="nova_intervencija.php">Nova intervencija</a></li>
                                         <li><a href="novi_kupac.php">Novi kupac</a></li>
-                                        <li><a href="#">Novi ugovor</a></li>
+                                        <li><a href="novi_ugovor.php">Novi ugovor</a></li>
 
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="sections">
-                        <div class="section1">
-                            <h3>Kupci</h3>
-                            <p>&nbsp;</p>
-                            <p>Status ugovora/
-                                kupci<br>
-                                Novi kupac<br>
-                                Izrada novog ugovora
-                            </p>
-                            <p>&nbsp;</p>
-                            <p><a href="#" class="more">Više</a></p>
-                        </div>
-                        <div class="section2">
-                            <h3>Intervencije</h3>
-                            <p>&nbsp;</p>
-                            <p>Sve intervencije i izrada novih<br>
-                            </p>
-                            <p>&nbsp;</p>
-                            <p><a href="#" class="more">Više</a></p>
-                        </div>
-                        <div class="section3">
-                            <h3>Postavljanje kase u rad</h3>
-                            <p>&nbsp;</p>
-                            <p>Instrukcije postavljanja kase u rad i najčešći problemi koji se javljaju na kasi<br>
-                            </p>
-                            <p>&nbsp;</p>
-                            <p><a href="#" class="more">Više</a></p>
-                        </div>
-                        <div class="section4">
-                            <h3>Uputstva za kupca</h3>
-                            <p>&nbsp;</p>
-                            <p>Kratke upute made by: Njićpra<br>
-                                Upute od digitrona
-                            </p>
-                            <p>&nbsp;</p>
-                            <p><a href="#" class="more">Više</a></p>
-                        </div>
-                    </div>
+                    <?php include 'dijeloviHTML/sections.php'; ?>
                 </div>
                 <?php include 'dijeloviHTML/footer.php'; ?>
             </div>

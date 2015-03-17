@@ -47,18 +47,18 @@ include 'init.php';
                                         echo "<tr style='color:; background-color:#99E699';>";
                                     echo "<td>" . $row['id'] . "</td>";
                                     echo "<td>" . $row['trajanje'] . ' mj.' . "</td>";
-                                    echo "<td>" . $row['dat_od'] . "</td>";
-                                    echo "<td>" . $row['dat_do'] . "</td>";
+                                    echo "<td>".  date('d.m.Y', strtotime($row['dat_od']));  "</td>";
+                                    echo "<td>".  date('d.m.Y', strtotime($row['dat_do']));  "</td>";
                                     echo "<td>" . $row['cijena'] . ' kn' . "</td>";
-                                    echo "<td><a href='ispravka_kupca.php?fisk_kupac_id=" . $row['id'] . "'><B>" . $row["ime"] . ' ' . $row['prezime'] . "</B></a></td>";
+                                    echo "<td><a href='ispravka_kupca.php?fisk_kupac_id=" . $row['fisk_kupac_id'] . "'><B>" . $row["ime"] . ' ' . $row['prezime'] . "</B></a></td>";
                                     echo "<td><a href='izmjena_ugovora.php?id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Izmjena</B></a></td>";
                                     echo "</tr>";
                                     } else {
                                         echo "<tr  style='color:red; background-color:#FF9999'>";
                                     echo "<td>" . $row['id'] . "</td>";
                                     echo "<td>" . $row['trajanje'] . ' mj.' . "</td>";
-                                    echo "<td>" . $row['dat_od'] . "</td>";
-                                    echo "<td>" . $row['dat_do'] . "</td>";
+                                    echo "<td>" .  date('d.m.Y', strtotime($row['dat_od']));  "</td>";
+                                    echo "<td>" .  date('d.m.Y', strtotime($row['dat_do']));  "</td>";
                                     echo "<td>" . $row['cijena'] . ' kn' . "</td>";
                                     echo "<td><a href='ispravka_kupca.php?fisk_kupac_id=" . $row['id'] . "'><B>" . $row["ime"] . ' ' . $row['prezime'] . "</B></a></td>";
                                     echo "<td><a href='izmjena_ugovora.php?id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Izmjena</B></a></td>";
@@ -75,44 +75,7 @@ include 'init.php';
                         </div>
                     </div>
 
-                    <div class="sections">
-                        <div class="section1">
-                            <h3>Kupci</h3>
-                            <p>&nbsp;</p>
-                            <p>Status ugovora/
-                                kupci<br>
-                                Novi kupac<br>
-                                Izrada novog ugovora
-                            </p>
-                            <p>&nbsp;</p>
-                            <p><a href="#" class="more">Više</a></p>
-                        </div>
-                        <div class="section2">
-                            <h3>Intervencije</h3>
-                            <p>&nbsp;</p>
-                            <p>Sve intervencije i izrada novih<br>
-                            </p>
-                            <p>&nbsp;</p>
-                            <p><a href="#" class="more">Više</a></p>
-                        </div>
-                        <div class="section3">
-                            <h3>Postavljanje kase u rad</h3>
-                            <p>&nbsp;</p>
-                            <p>Instrukcije postavljanja kase u rad i najčešći problemi koji se javljaju na kasi<br>
-                            </p>
-                            <p>&nbsp;</p>
-                            <p><a href="#" class="more">Više</a></p>
-                        </div>
-                        <div class="section4">
-                            <h3>Uputstva za kupca</h3>
-                            <p>&nbsp;</p>
-                            <p>Kratke upute made by: Njićpra<br>
-                                Upute od digitrona
-                            </p>
-                            <p>&nbsp;</p>
-                            <p><a href="#" class="more">Više</a></p>
-                        </div>
-                    </div>
+                    <?php include 'dijeloviHTML/sections.php'; ?>
                 </div>
                 <?php include 'dijeloviHTML/footer.php'; ?>
             </div>
