@@ -22,9 +22,6 @@ include 'init.php';
             <div class="page-out2">
                 <?php include 'dijeloviHTML/header2.php'; ?>
                 <div class="content2">
-                    <div>
-                        <div>
-                            <div>
 
                                 <?php
                                 echo "<div style='width: 899px;margin-left:auto; margin-right:auto;'>";
@@ -68,9 +65,6 @@ include 'init.php';
                                 ?>
                                 <p>&nbsp;</p>
                                 <p>&nbsp;</p>
-                            </div>
-                        </div>
-                    </div>
 
                      <?php include 'dijeloviHTML/sections2.php'; ?>
 <?php include 'dijeloviHTML/footer.php'; ?>

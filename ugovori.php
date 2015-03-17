@@ -13,20 +13,22 @@ include 'init.php';
         <meta name="description" content="Description of your site goes here">
         <meta name="keywords" content="Eurotrade, Servis, Eurotrade servis">
         <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="css/table.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div class="main">
-            <div class="page-out">
-                <?php include 'dijeloviHTML/header.php'; ?>
-                <div class="content">
-                    <div div style="width: 900px;">
-                        <div>
-                            <div>
-                                <h1 class="title">Ugovori</h1>
+            <div class="page-out2">
+                <?php include 'dijeloviHTML/header2.php'; ?>
+                <div class="content2">
+                                
                                 <?php
+                                echo "<div style='width: 899px;margin-left:auto; margin-right:auto;'>";
+                                echo "<h1 class='title'  style='display:inline'>Ugovori</h1>";
                                 echo '<a href="novi_ugovor.php"><button style="display:inline; float:right;">Novi ugovor</button></a>';
+                                echo "</div>";
                                 $result = svi_ugovori();
-                                echo "<table border='1' style='color:green; font-size:14px;'>";
+                                echo "<table>";
+                                echo "<thead>";
                                 echo "<tr>";
                                 echo "<th>ID</th>";
                                 echo "<th>Trajanje</th>";
@@ -35,6 +37,7 @@ include 'init.php';
                                 echo "<th>Cijena</th>";
                                 echo "<th>Kupac</th>";
                                 echo "</tr>";
+                                echo "</thead>";
 
                                 while ($row = mysql_fetch_array($result)) {
                                     $exp_date = $row['dat_do'];
@@ -44,7 +47,7 @@ include 'init.php';
                                     $expiration_date = strtotime($exp_date);
 
                                     if ($expiration_date > $today) {
-                                        echo "<tr style='color:; background-color:#99E699';>";
+                                        echo "<tr style='color:#19A347; background-color:';>";
                                     echo "<td>" . $row['id'] . "</td>";
                                     echo "<td>" . $row['trajanje'] . ' mj.' . "</td>";
                                     echo "<td>".  date('d.m.Y', strtotime($row['dat_od']));  "</td>";
@@ -54,7 +57,7 @@ include 'init.php';
                                     echo "<td><a href='izmjena_ugovora.php?id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Izmjena</B></a></td>";
                                     echo "</tr>";
                                     } else {
-                                        echo "<tr  style='color:red; background-color:#FF9999'>";
+                                        echo "<tr  style='color:#FF3333; background-color:'>";
                                     echo "<td>" . $row['id'] . "</td>";
                                     echo "<td>" . $row['trajanje'] . ' mj.' . "</td>";
                                     echo "<td>" .  date('d.m.Y', strtotime($row['dat_od']));  "</td>";
@@ -71,11 +74,8 @@ include 'init.php';
                                 ?>
                                 <p>&nbsp;</p>
                                 <p>&nbsp;</p>
-                            </div>
-                        </div>
-                    </div>
 
-                    <?php include 'dijeloviHTML/sections.php'; ?>
+                    <?php include 'dijeloviHTML/sections2.php'; ?>
                 </div>
                 <?php include 'dijeloviHTML/footer.php'; ?>
             </div>
