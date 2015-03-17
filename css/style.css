@@ -41,12 +41,23 @@ a:hover {
     margin: 0px auto;
     padding-top: 8px;
 }
+.page-out2 {
+    width: 1200px;
+    margin: 0px auto;
+    padding-top: 8px;
+}
 
 
 .header {
     width: 899px;
     float: left;
     padding: 0px 20px;
+}
+.header2 {
+    width: 899px;
+    padding: 0px 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .header-top {
     width: 899px;
@@ -115,6 +126,14 @@ a:hover {
     width: 899px;
     /* float: left; */
     padding: 19px 20px 0px 20px;
+  
+}
+.content2 {
+    width: 1100px;
+    /* float: left; */
+    padding: 19px 20px 0px 20px;
+    margin-left: auto;
+    margin-right: auto;
   
 }
 
@@ -228,6 +247,17 @@ a:hover {
     float: left;
     padding-top: 41px;
 }
+
+.sections2 {
+    width: 899px;
+    height: 184px;
+   // float: left;
+    padding-top: 41px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
 .section1 {
     font-size: 11px;
     background-image: url(../images/sec1bg.jpg);
@@ -294,6 +324,9 @@ a.more:hover {
     text-decoration: underline;
 }
 footer{
+    margin-left: auto;
+    margin-right: auto;
+    width: 899px;
 }
 
 .footer {
@@ -304,7 +337,10 @@ footer{
     height: 111px;
     float: left;
     padding: 0px 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 
 
 .footer-left {

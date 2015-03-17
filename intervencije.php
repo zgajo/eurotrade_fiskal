@@ -19,17 +19,19 @@ include 'init.php';
     <body>
 
         <div class="main">
-            <div class="page-out">
-                <?php include 'dijeloviHTML/header.php'; ?>
-                <div class="content">
-                    <div style="width: 900px;">
+            <div class="page-out2">
+                <?php include 'dijeloviHTML/header2.php'; ?>
+                <div class="content2">
+                    <div>
                         <div>
                             <div>
 
                                 <?php
-                                echo '<h1 style="display:inline">Intervencije</h1>';
+                                echo "<div style='width: 899px;margin-left:auto; margin-right:auto;'>";
+                                echo '<h1 class="title" style="display:inline">Intervencije</h1>';
                                 echo '<a href="nova_intervencija.php"><button style="display:inline; float:right;">Nova intervencija</button></a>';
                                 echo '<a href="kupci.php"><button style="display:inline; float:right;">Kupci</button></a>';
+                                echo "</div>";
                                 $result = sve_intervencije();
 
                                 echo "<table>
@@ -70,7 +72,7 @@ include 'init.php';
                         </div>
                     </div>
 
-                     <?php include 'dijeloviHTML/sections.php'; ?>
+                     <?php include 'dijeloviHTML/sections2.php'; ?>
 <?php include 'dijeloviHTML/footer.php'; ?>
                 </div>
 
