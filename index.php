@@ -57,15 +57,12 @@ include 'init.php';
                             </div>
                         </div>
                     </div>
-                     
+                     <?php include 'dijeloviHTML/sections.php'; ?>
                 </div>
-                <div>
-                <?php include 'dijeloviHTML/sections.php'; ?>
-                <?php include 'dijeloviHTML/footer.php';?>
-                </div>
+                
             </div>
         </div>
-
+<?php include 'dijeloviHTML/footer.php';?>
 
     </body>
 </html>

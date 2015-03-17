@@ -245,9 +245,7 @@ a:hover {
     width: 899px;
     height: 184px;
     float: left;
-    padding-top: 41px;
-    bottom: 100px;
-    position: absolute;
+    padding-top: 150px;
 }
 
 .sections2 {
@@ -341,8 +339,6 @@ footer{
     padding: 0px 20px;
     margin-left: auto;
     margin-right: auto;
-    bottom: 0px;
-    position: absolute;
 }
 
 
