@@ -36,7 +36,6 @@ include 'init.php';
                                 <div id="search_result">
                                     
                                 </div>
-                                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>sd<br><br><br><br><br><br><br><br><br>
                                 <p>&nbsp;</p>
                                 <p>&nbsp;</p>
                                 
