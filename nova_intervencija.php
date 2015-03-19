@@ -44,7 +44,7 @@ ob_start();
                                                 <input type="date" type="text" name="intervencija_od" id="name"  autocomplete="off" tabindex="1" class="txtinput" >
                                                 
                                                 <h3>Zatražena intervencija: </h3>
-                                                <input type="text" name="zatrazeno" id="telephone" ptabindex="4" class="txtinput">
+                                                <input type="text" accept-charset="UTF-8" name="zatrazeno" id="telephone" ptabindex="4" class="txtinput">
 
                                                 <section id="buttons">
                                                     <input type="submit" name="unesi" id="submitbtn" class="submitbtn" tabindex="7" value="Unesi">
