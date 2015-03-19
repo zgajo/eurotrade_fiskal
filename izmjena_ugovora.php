@@ -40,7 +40,7 @@ ob_start();
                                 }
                                 ?>
                                 <section id="container">
-                                    <h2>Id kupca: <?= $ugovor_id ?></h2>
+                                    <h2>Id ugovora: <?= $ugovor_id ?></h2>
                                     <form name="hongkiat" id="hongkiat-form" method="get" action="">
                                         <div id="wrapping" class="clearfix">
                                             <section id="aligned">

@@ -18,8 +18,9 @@ include 'init.php';
     <body>
 
         <div class="main">
+            <?php include 'dijeloviHTML/header.php'; ?>
+            <div class="header-img"><img src="images/header.jpg"  style="margin-bottom: 15px;  " alt="" height="225" width="100%"></div>
             <div class="page-out">
-                <?php include 'dijeloviHTML/header.php'; ?>
                 <div class="content">
                     <div style="width: 900px;">
                         <div>
