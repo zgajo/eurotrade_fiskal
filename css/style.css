@@ -32,7 +32,7 @@ a:hover {
     width: 100%;
     float: left;
     min-height: 100%; 
-    position: relative;
+    margin-bottom: -111px;
 }
 
 
@@ -245,6 +245,8 @@ a:hover {
     width: 899px;
     height: 184px;
     float: left;
+    margin-bottom: 111px;
+    margin-top: 111px;
 }
 
 .sections2 {
@@ -255,6 +257,8 @@ a:hover {
     margin-left: auto;
     margin-right: auto;
     
+    margin-bottom: 111px;
+    margin-top: 111px;
 }
 
 .section1 {

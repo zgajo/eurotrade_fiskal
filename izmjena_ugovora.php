@@ -87,10 +87,10 @@ ob_start();
                     
                      <?php include 'dijeloviHTML/sections.php'; ?>
                 </div>
-<?php include 'dijeloviHTML/footer.php' ?>
+
             </div>
         </div>
-
+<?php include 'dijeloviHTML/footer.php' ?>
 
     </body>
 </html>

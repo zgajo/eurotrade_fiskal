@@ -77,9 +77,9 @@ include 'init.php';
 
                     <?php include 'dijeloviHTML/sections2.php'; ?>
                 </div>
-                <?php include 'dijeloviHTML/footer.php'; ?>
             </div>
         </div>
+                <?php include 'dijeloviHTML/footer.php'; ?>
 
 
     </body>

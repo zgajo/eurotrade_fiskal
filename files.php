@@ -105,8 +105,10 @@ if ($handle = opendir('pdf/')) {
                             <p><a href="#" class="more">Više</a></p>
                         </div>
                     </div>
-<?php include 'dijeloviHTML/footer.php'; ?>
                 </div>
+                </div>
+            </div>
+<?php include 'dijeloviHTML/footer.php'; ?>
 
 
                 </body>
