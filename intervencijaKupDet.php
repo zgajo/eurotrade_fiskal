@@ -13,7 +13,7 @@ include 'init.php';
         <meta name="description" content="Description of your site goes here">
         <meta name="keywords" content="Eurotrade, Servis, Eurotrade servis">
         <link href="css/style.css" rel="stylesheet" type="text/css">
-        
+        <link href="css/table.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div class="main">
@@ -26,9 +26,9 @@ include 'init.php';
                             <div>
                                 
                                 <?php
-                                echo '<h1 style="display:inline">Kupci</h1>';
-                                echo '<button style="display:inline; float:right;">Novi kupac</button>';
-                                echo "<table border='1' style='color:green; font-size:14px;'>
+                                echo '<h1 class="title" style="display:inline">Sve intervencije<span> za kupca</span></h1>';
+                                echo "<table>
+                                    <thead>
                                         <tr>
                                         <th>ID</th>
                                         <th>Zatraženo</th>
@@ -38,10 +38,12 @@ include 'init.php';
                                         <th>Naplaćena šifra</th>
                                         <th>Serviser</th>
 
-                                        </tr>";
+                                        </tr>
+                                        </thead>";
                                 $kupac_id = $_GET['fisk_kupac_id'];
                                 $result = intervencijaKupDet($kupac_id);
                                 while ($row = mysql_fetch_array($result)) {
+                                    echo "<tbody>";
                                     echo "<tr>";
                                     echo "<td>" . $row['id'] . "</td>";
                                     echo "<td>" . $row['zatrazeno'] . "</td>";
@@ -51,6 +53,7 @@ include 'init.php';
                                     echo "<td>" . $row['sifra_naplate'] . "</td>";
                                     echo "<td>". $row['serviser_ime']. ' ' . $row['serviser_prezime']."</td>";
                                     echo "</tr>";
+                                    echo "</tbody>";
                                 }
                                 echo "</table>";
                                 ?>

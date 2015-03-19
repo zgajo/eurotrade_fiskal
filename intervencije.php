@@ -27,8 +27,8 @@ include 'init.php';
                                 <?php
                                 echo "<div style='width: 899px;margin-left:auto; margin-right:auto;'>";
                                 echo '<h1 class="title" style="display:inline">Intervencije</h1>';
-                                echo '<a href="nova_intervencija.php"><button style="display:inline; float:right;">Nova intervencija</button></a>';
-                                echo '<a href="kupci.php"><button style="display:inline; float:right;">Kupci</button></a>';
+                                echo '<a href="nova_intervencija.php" class="myButton" style="display:inline; float:right;">Nova intervencija</a>';
+                                echo '<a href="kupci.php"  class="myButton" style="display:inline; float:right; margin-right: 5px;">Kupci</a>';
                                 echo "</div>";
                                 $result = sve_intervencije();
 

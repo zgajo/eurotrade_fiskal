@@ -25,7 +25,7 @@ include 'init.php';
                                 <?php
                                 echo "<div style='width: 899px;margin-left:auto; margin-right:auto;'>";
                                 echo "<h1 class='title'  style='display:inline'>Ugovori</h1>";
-                                echo '<a href="novi_ugovor.php"><button style="display:inline; float:right;">Novi ugovor</button></a>';
+                                echo '<a href="novi_ugovor.php"  class="myButton" style="display:inline; float:right;">Novi ugovor</a>';
                                 echo "</div>";
                                 $result = svi_ugovori();
                                 echo "<table>";
@@ -37,6 +37,7 @@ include 'init.php';
                                 echo "<th>Datum do</th>";
                                 echo "<th>Cijena</th>";
                                 echo "<th>Kupac</th>";
+                                echo "<th>Izmjena</th>";
                                 echo "</tr>";
                                 echo "</thead>";
 
@@ -55,7 +56,7 @@ include 'init.php';
                                     echo "<td>".  date('d.m.Y', strtotime($row['dat_do']));  "</td>";
                                     echo "<td>" . $row['cijena'] . ' kn' . "</td>";
                                     echo "<td><a href='ispravka_kupca.php?fisk_kupac_id=" . $row['fisk_kupac_id'] . "'><B>" . $row["ime"] . ' ' . $row['prezime'] . "</B></a></td>";
-                                    echo "<td><a href='izmjena_ugovora.php?id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Izmjena</B></a></td>";
+                                    echo "<td><a href='izmjena_ugovora.php?id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Izmjena ugovora</B></a></td>";
                                     echo "</tr>";
                                     } else {
                                         echo "<tr  style='color:#FF3333; background-color:'>";
@@ -65,7 +66,7 @@ include 'init.php';
                                     echo "<td>" .  date('d.m.Y', strtotime($row['dat_do']));  "</td>";
                                     echo "<td>" . $row['cijena'] . ' kn' . "</td>";
                                     echo "<td><a href='ispravka_kupca.php?fisk_kupac_id=" . $row['id'] . "'><B>" . $row["ime"] . ' ' . $row['prezime'] . "</B></a></td>";
-                                    echo "<td><a href='izmjena_ugovora.php?id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Izmjena</B></a></td>";
+                                    echo "<td><a href='izmjena_ugovora.php?id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Izmjena ugovora</B></a></td>";
                                     echo "</tr>";
                                     }
                                     
