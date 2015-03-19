@@ -50,8 +50,9 @@ a:hover {
 
 .header {
     width: 899px;
-    float: left;
     padding: 0px 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .header2 {
     width: 899px;
@@ -119,7 +120,7 @@ a:hover {
     background-position: right top;
 }
 .header-img {
-    width: 899px;
+    width: 100%;
     float: left;
 }
 .content {

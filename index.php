@@ -18,10 +18,13 @@ include 'init.php';
     </head>
     <body>
         <div class="main">
+            <?php include 'dijeloviHTML/header.php'; ?>
+            <div class="header-img"><img src="images/header.jpg"  style="margin-bottom: 15px;  " alt="" height="225" width="100%"></div>
+
             <div class="page-out">
-               <?php include 'dijeloviHTML/header.php';?>
+
                 <div class="content">
-                    
+
                     <div class="left-out">
                         <div class="left-in">
                             <div class="left-panel">
@@ -34,11 +37,11 @@ include 'init.php';
                                     <input type="text" id="search_box"><button id="search_button">Pretraži</button>
                                 </span>
                                 <div id="search_result">
-                                    
+
                                 </div>
                                 <p>&nbsp;</p>
                                 <p>&nbsp;</p>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -57,14 +60,14 @@ include 'init.php';
                             </div>
                         </div>
                     </div>
-                     <?php include 'dijeloviHTML/sections.php'; ?>
-                    
+                    <?php include 'dijeloviHTML/sections.php'; ?>
+
 
                 </div>
-                
+
             </div>
-            
+
         </div>
-<?php include 'dijeloviHTML/footer.php';?>
+        <?php include 'dijeloviHTML/footer.php'; ?>
     </body>
 </html>
