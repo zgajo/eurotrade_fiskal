@@ -49,8 +49,8 @@ include 'init.php';
                         <div class="right-in">
                             <div class="right-panel">
                                 <div class="right-block">
-                                    <h2>Kategorije</h2>
-                                    <ul>
+                                    <h2 class="title">Kategorije</h2>
+                                    <ul class="title">
                                         <li><a href="nova_intervencija.php">Nova intervencija</a></li>
                                         <li><a href="novi_kupac.php">Novi kupac</a></form></li>
                                         <li><a href="novi_ugovor.php">Novi ugovor</a></li>
