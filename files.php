@@ -26,14 +26,14 @@ include 'init.php';
                         <div>
                             <div>
                                 <?php
-                                if ($_POST['upload'] == "1"){
-                                    $destination = "pdf/".$_FILES['file']['name'];
+                                if ($_POST['upload'] == "1") {
+                                    $destination = "pdf/" . $_FILES['file']['name'];
                                     move_uploaded_file($_FILES['file']['tmp_name'], $destination);
-                                   echo "Ime uploadane datoteke: ".$_FILES['file']['name']; 
-                                   echo "<br>";
-                                   echo "Veličina uploadane datoteke: ".$_FILES['file']['size']." bytova";
-                                   echo "<br>";
-                                   echo "Vrsta uploadane datoteke: ".$_FILES['file']['type'];
+                                    echo "Ime uploadane datoteke: " . $_FILES['file']['name'];
+                                    echo "<br>";
+                                    echo "Veličina uploadane datoteke: " . $_FILES['file']['size'] . " bytova";
+                                    echo "<br>";
+                                    echo "Vrsta uploadane datoteke: " . $_FILES['file']['type'];
                                 }
                                 ?>
                                 <form method="POST" enctype="multipart/form-data">
@@ -41,27 +41,24 @@ include 'init.php';
                                     <input type="file" name="file">
                                     <input type="submit" value="Upload">
                                 </form>
-                                
+
                                 <h1 class="title">Upute za postavljenje<span> kase u rad:</span></h1>
-                                
+
                                 <?php
-if ($handle = opendir('pdf/')) {
-    while (false !== ($file = readdir($handle)))
-    {
-        if (($file != ".") 
-         && ($file != ".."))
-        {
-            $thelist .= '<LI><a href="pdf/'.$file.'">'.$file.'</a>';
-        }
-    }
+                                if ($handle = opendir('pdf/')) {
+                                    while (false !== ($file = readdir($handle))) {
+                                        if (($file != ".") && ($file != "..")) {
+                                            $thelist .= '<LI><a href="pdf/' . $file . '">' . $file . '</a>';
+                                        }
+                                    }
 
-    closedir($handle);
-}
-?>
+                                    closedir($handle);
+                                }
+                                ?>
 
-<UL>
-<P><?=$thelist?></p>
-</UL>
+                                <UL>
+                                    <P><?= $thelist ?></p>
+                                </UL>
                                 <p>&nbsp;</p>
                                 <p>&nbsp;</p>
                             </div>
@@ -107,13 +104,13 @@ if ($handle = opendir('pdf/')) {
                         </div>
                     </div>
                 </div>
-                </div>
             </div>
+        </div>
 <?php include 'dijeloviHTML/footer.php'; ?>
 
 
-                </body>
-                </html>
+    </body>
+</html>
 
 
 
