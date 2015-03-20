@@ -48,6 +48,11 @@ include 'init.php';
                                         </thead>";
                                 
                                 while ($row = mysql_fetch_array($result)) {
+                                   $dat_do = $row['intervencija_do'];
+                                   if(!empty($dat_do)){
+                                       $d_d = date('d.m.Y', strtotime($row['intervencija_do']));
+                                   }
+                                   else $d_d = "";
                                     echo "<tbody>";
                                     echo "<tr>";
                                     echo "<td><a  href='intervencijaDet.php?id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Detalji</B></a></td>";
@@ -56,7 +61,7 @@ include 'init.php';
                                     echo "<td>" . $row['ime'] . ' ' . $row['prezime'] . ', ' . $row['tvrtka'] . "</td>";
                                     echo "<td>" . $row['zatrazeno'] . "</td>";
                                     echo "<td>" . date('d.m.Y', strtotime($row['intervencija_od']));  "</td>";
-                                    echo "<td>" . date('d.m.Y',strtotime($row['intervencija_do'])) ; "</td>";
+                                    echo "<td>" . $d_d . "</td>";
                                     echo "<td>" . $row['sifra_naplate'] . "</td>";
                                     echo "<td>" . $row['serviser_ime'] . ' ' . $row['serviser_prezime'] . "</td>";
                                     echo "</tr>";
