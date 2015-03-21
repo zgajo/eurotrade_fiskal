@@ -87,4 +87,10 @@ td.user-name {
 	max-height: 50vh;
 }
 
+.files{
+width: auto;
+}
 
+.files tr td{
+    font-size: 17px;
+}

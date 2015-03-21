@@ -13,6 +13,7 @@ include 'init.php';
         <meta name="description" content="Description of your site goes here">
         <meta name="keywords" content="Eurotrade, Servis, Eurotrade servis">
         <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="css/table.css" rel="stylesheet" type="text/css">
         <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
     </head>
     <body>
@@ -34,6 +35,7 @@ include 'init.php';
                                     echo "Veličina uploadane datoteke: " . $_FILES['file']['size'] . " bytova";
                                     echo "<br>";
                                     echo "Vrsta uploadane datoteke: " . $_FILES['file']['type'];
+                                    header('refresh:3;location:files.php');
                                 }
                                 ?>
                                 <form method="POST" enctype="multipart/form-data">
@@ -43,12 +45,19 @@ include 'init.php';
                                 </form>
 
                                 <h1 class="title">Upute za postavljenje<span> kase u rad:</span></h1>
-
+                               
                                 <?php
                                 if ($handle = opendir('pdf/')) {
                                     while (false !== ($file = readdir($handle))) {
                                         if (($file != ".") && ($file != "..")) {
-                                            $thelist .= '<tr><td style="border: 1px solid black"><a href="pdf/' . $file . '">' . $file . '</a></tr></td>';
+                                            $thelist .= '<tr>'
+                                                    . '<td style="border: 1px solid black">'
+                                                    . '<a href="pdf/' . $file . '">' . $file . '</a>'
+                                                    . '</td>'
+                                                    . '<td>'. pathinfo("pdf/$file ", PATHINFO_EXTENSION) .'</td>'
+                                                    . '<td>' . filesize("pdf/$file ") / '1048576 ' . '</td>'
+                                                    . '<td>' . filemtime("pdf/$file ") . '</td>'
+                                                    . '</tr>';
                                             /*$thelist .= '<li><a href="pdf/' . $file . '">' . $file . '</a>';*/
                                         
                                         }
@@ -57,7 +66,13 @@ include 'init.php';
                                     closedir($handle);
                                 }
                                 ?>
-                                <table style="border: 1px solid black">
+                                <table class="files">
+                                    <thead>
+                                    <th>Datoteka</th>
+                                    <th>Tip</th>
+                                    <th>Veličina (mb)</th>
+                                    <th>Datum dodavanja</th>
+                                    </thead>
                                     <?= $thelist ?>
                                 </table>
                                <!-- <UL>
