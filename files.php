@@ -48,17 +48,21 @@ include 'init.php';
                                 if ($handle = opendir('pdf/')) {
                                     while (false !== ($file = readdir($handle))) {
                                         if (($file != ".") && ($file != "..")) {
-                                            $thelist .= '<LI><a href="pdf/' . $file . '">' . $file . '</a>';
+                                            $thelist .= '<tr><td style="border: 1px solid black"><a href="pdf/' . $file . '">' . $file . '</a></tr></td>';
+                                            /*$thelist .= '<li><a href="pdf/' . $file . '">' . $file . '</a>';*/
+                                        
                                         }
                                     }
 
                                     closedir($handle);
                                 }
                                 ?>
-
-                                <UL>
+                                <table style="border: 1px solid black">
+                                    <?= $thelist ?>
+                                </table>
+                               <!-- <UL>
                                     <P><?= $thelist ?></p>
-                                </UL>
+                                </UL> -->
                                 <p>&nbsp;</p>
                                 <p>&nbsp;</p>
                             </div>
