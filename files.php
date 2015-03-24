@@ -44,7 +44,7 @@ include 'init.php';
                                     <div class="input-group">
                                         <span class="input-group-btn">
                                             <span class="btn btn-primary btn-file">
-                                                Browse&hellip; <input type="file" multiple>
+                                                <p style="margin-top: 4px;">Browse&hellip;</p> <input type="file" multiple>
                                             </span>
                                         </span>
                                         <input type="text" class="form-control" readonly>

@@ -513,6 +513,7 @@ footer{
   position: relative;
   overflow: hidden;
   height: 24px;
+  /* padding-top: 2px; */
 }
 .btn-file input[type=file] {
   position: absolute;
@@ -550,4 +551,5 @@ input[readonly] {
     margin-bottom: 10px;
     text-align:center;
    cursor: pointer;
+   color: white;
 }
