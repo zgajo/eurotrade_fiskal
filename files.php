@@ -49,13 +49,16 @@ include 'init.php';
                                 <?php
                                 if ($handle = opendir('pdf/')) {
                                     while (false !== ($file = readdir($handle))) {
+                                        
                                         if (($file != ".") && ($file != "..")) {
+                                            $kb=filesize("pdf/$file ") / 1024;
+                                            $velicina = round($kb,2);
                                             $thelist .= '<tr>'
-                                                    . '<td style="border: 1px solid black">'
+                                                    . '<td>'
                                                     . '<a href="pdf/' . $file . '">' . $file . '</a>'
                                                     . '</td>'
                                                     . '<td>'. pathinfo("pdf/$file ", PATHINFO_EXTENSION) .'</td>'
-                                                    . '<td>' . filesize("pdf/$file ") / '1048576 ' . '</td>'
+                                                    . '<td>' . $velicina . '</td>'
                                                     . '<td>' . filemtime("pdf/$file ") . '</td>'
                                                     . '</tr>';
                                             /*$thelist .= '<li><a href="pdf/' . $file . '">' . $file . '</a>';*/
@@ -70,7 +73,7 @@ include 'init.php';
                                     <thead>
                                     <th>Datoteka</th>
                                     <th>Tip</th>
-                                    <th>Veličina (mb)</th>
+                                    <th>Veličina (kb)</th>
                                     <th>Datum dodavanja</th>
                                     </thead>
                                     <?= $thelist ?>

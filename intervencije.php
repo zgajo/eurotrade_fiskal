@@ -53,8 +53,7 @@ include 'init.php';
                                        $d_d = date('d.m.Y', strtotime($row['intervencija_do']));
                                    }
                                    else $d_d = "";
-                                    echo "<tbody>";
-                                    echo "<tr>";
+                                    echo "<tr  background-color:'>";
                                     echo "<td><a  href='intervencijaDet.php?id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Detalji</B></a></td>";
                                     echo "<td><a  href='zavrsi_interv.php?id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Izmijeni rn</B></a></td>";
                                     echo "<td>" . $row['id'] . "</td>";
@@ -65,7 +64,6 @@ include 'init.php';
                                     echo "<td>" . $row['sifra_naplate'] . "</td>";
                                     echo "<td>" . $row['serviser_ime'] . ' ' . $row['serviser_prezime'] . "</td>";
                                     echo "</tr>";
-                                    echo "</tbody>";
                                 }
                                 echo "</table>";
                                 ?>
