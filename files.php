@@ -59,7 +59,7 @@ include 'init.php';
                                                     . '</td>'
                                                     . '<td>'. pathinfo("pdf/$file ", PATHINFO_EXTENSION) .'</td>'
                                                     . '<td>' . $velicina . '</td>'
-                                                    . '<td>' . filemtime("pdf/$file ") . '</td>'
+                                                    . '<td>' . date ("d. m. Y H:i:s.",filemtime("pdf/$file ")) . '</td>'
                                                     . '</tr>';
                                             /*$thelist .= '<li><a href="pdf/' . $file . '">' . $file . '</a>';*/
                                         
