@@ -508,3 +508,46 @@ footer{
 	position:relative;
 	top:1px;
 }
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+  height: 24px;
+  padding-left: auto;
+  padding-right:auto;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  background: red;
+  cursor: inherit;
+  display: block;
+}
+input[readonly] {
+  background-color: white !important;
+  cursor: text !important;
+  height: 20px;
+  min-width: 300px;
+  display: inline-block;
+}
+
+.input-group{
+    margin-bottom: 10px;
+}
+
+.input-group-btn{
+    position:absolute;
+    background-color: #4aaee7;
+    min-height: 24px;
+    min-width: 76px;
+    font-size: 13px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
