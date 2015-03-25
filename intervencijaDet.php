@@ -27,7 +27,6 @@ include 'init.php';
                         <div>
                             <div>
                                 <h1 class="title">Završavanje radnog<span> naloga</span></h1>
-                                <button style="display:inline; float:right;">Novi kupac</button>
                                 <?php
                                 $id = filter_input(INPUT_GET, 'id');
                                 $result = intervencijaDet($id);
