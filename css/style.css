@@ -510,9 +510,9 @@ footer{
 }
 
 .btn-file {
-  position: relative;
-  overflow: hidden;
-  height: 24px;
+  /* position: relative; */
+  /* overflow: hidden; */
+  /* height: 24px; */
   /* padding-top: 2px; */
 }
 .btn-file input[type=file] {
@@ -544,12 +544,18 @@ input[readonly] {
 .input-group-btn{
     position:absolute;
     background-color: #4aaee7;
-    min-height: 24px;
+    /* min-height: 24px; */
     min-width: 76px;
     /* font-size: 13px; */
     display: inline-block;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     text-align:center;
    cursor: pointer;
    color: white;
+   
+    height: 24px;
+    /* padding-top: 4px; */
+    /* max-width: 24px; */
 }
+
+
