@@ -7,7 +7,7 @@ include 'init.php';
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Intervencije</title>
+        <title>Upute</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <meta name="description" content="Description of your site goes here">
@@ -39,17 +39,17 @@ include 'init.php';
                                     header('refresh:3;location:files.php');
                                 }
                                 ?>
-                                <form class="upload" method="POST" enctype="multipart/form-data">
+                                <form style="margin-bottom: 15px; margin-top: 15px;" method="POST" enctype="multipart/form-data">
                                     <input type="hidden" name="upload" value="1">
                                     <div class="input-group">
                                         <span class="input-group-btn">
                                             <span class="btn btn-primary btn-file">
-                                                <p style="margin-top: 4px;"  class="btn btn-primary btn-file" >Browse&hellip;</p> <input type="file" multiple>
+                                                <p style="margin-top: 4px;"  class="btn btn-primary btn-file" >Browse&hellip;</p> <input type="file" name="file" multiple>
                                             </span>
                                         </span>
                                         <input type="text" class="form-control" readonly>
                                     </div>
-                                    <input type="submit" value="Upload">
+                                    <input class="upload" type="submit" value="Upload">
                                 </form>
 
                                 <h1 class="title">Upute za postavljenje<span> kase u rad:</span></h1>

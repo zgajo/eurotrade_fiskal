@@ -518,47 +518,68 @@ footer{
 }
 .btn-file input[type=file] {
   position: absolute;
-  top: 0;
-  right: 0;
-  min-width: 100%;
-  min-height: 100%;
-  font-size: 100px;
+  /* top: 342px; */
+  /* right: 0; */
+  min-width: 350px;
+  /* min-height: 100%; */
+  /* font-size: 100px; */
   text-align: right;
   filter: alpha(opacity=0);
-  opacity: 0;
+   
+  opacity: 0; 
   background: red;
-  cursor: inherit;
+  cursor: pointer;
   display: block;
+  margin-top: -18px;
 }
 input[readonly] {
   background-color: white !important;
   cursor: text !important;
   height: 20px;
-  min-width: 300px;
+  min-width: 74%;
   display: inline-block;
-  border-radius: 15px;
+ 
+  /* border-radius: 15px; */
+  margin-left: 0;
 }
 
 .input-group{
-    /* margin-bottom: 10px; */
-    
+    display: inline-block;
+    width: 350px;
+    /* position: relative; */
     /* border-radius: 15px; */
 }
 
 .input-group-btn{
-    position:absolute;
+    /* position: absolute; */
     background-color: #4aaee7;
     /* min-height: 24px; */
-    min-width: 76px;
+    min-width: 81px;
     /* font-size: 13px; */
     display: inline-block;
-    /* margin-bottom: 10px; */
     text-align:center;
    cursor: pointer;
    color: white;
    
     height: 24px;
     /* padding-top: 4px; */
-    /* max-width: 24px; */
-    border-radius: 15px;
+    /* border-radius: 15px; */
+    
+    /* display: inline; */
+}
+
+.input-group-btn:hover{
+   background-color: #3b8bb8;
+}
+
+.upload{
+    display: inline-block;
+    margin-left: 15px;
+     background: #474747;
+    border: none;  
+    color: white;
+    padding: 5px 10px;
+}
+.upload:hover{
+    background-color: #757575;
 }
