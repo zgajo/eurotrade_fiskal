@@ -39,7 +39,7 @@ include 'init.php';
                                     header('refresh:3;location:files.php');
                                 }
                                 ?>
-                                <form method="POST" enctype="multipart/form-data">
+                                <form class="upload" method="POST" enctype="multipart/form-data">
                                     <input type="hidden" name="upload" value="1">
                                     <div class="input-group">
                                         <span class="input-group-btn">
