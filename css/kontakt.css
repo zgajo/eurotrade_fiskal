@@ -169,7 +169,7 @@ select.selmenu {
     border: 1px solid;
     outline: 0;
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.6em;
     color:  #fff;
     text-shadow: 0px 1px 0px #222;
     white-space: nowrap;
@@ -187,7 +187,7 @@ select.selmenu {
     background-color: rgb(226,238,175);
     background-image: -moz-linear-gradient(top, rgb(226,238,175) 3%, rgb(188,216,77) 3%, rgb(144,176,38) 100%);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(3%,rgb(226,238,175)), color-stop(3%,rgb(188,216,77)), color-stop(100%,rgb(144,176,38))); 
-    background-image: -webkit-linear-gradient(top, rgb(226,238,175) 3%,rgb(188,216,77) 3%,rgb(144,176,38) 100%);
+    background-image: -webkit-linear-gradient(top, rgb(226,238,175) 3%,rgb(188, 216, 77) 3%,rgb(144,176,38) 100%);
     background-image: -o-linear-gradient(top, rgb(226,238,175) 3%,rgb(188,216,77) 3%,rgb(144,176,38) 100%);
     background-image: -ms-linear-gradient(top, rgb(226,238,175) 3%,rgb(188,216,77) 3%,rgb(144,176,38) 100%);
     background-image: linear-gradient(top, rgb(226,238,175) 3%,rgb(188,216,77) 3%,rgb(144,176,38) 100%); 

@@ -48,7 +48,7 @@ include 'init.php';
                                 while ($row = mysql_fetch_array($result)) {
                                    
                                     echo "<tr>";
-                                    echo "<td><a  href='intervencijaKupDet.php?fisk_kupac_id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Detalji</B></a></td>";
+                                    echo "<td><a  href='intervencijaKupDet.php?fisk_kupac_id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Intervencije</B></a></td>";
                                     echo "<td><a href='ispravka_kupca.php?fisk_kupac_id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Ispravka</B></a></td>";
                                     echo "<td>" . $row['id'] . "</td>";
                                     echo "<td>" . $row['ime'] . "</td>";
