@@ -13,8 +13,8 @@
         <div class="footer-right">
             <ul>
                 <li><a href="index.php">Početna</a>/</li>
-                <li><a href="#">Intervencije</a>/</li>
-                <li><a href="#">Upute</a></li>
+                <li><a href="../intervencije.php">Intervencije</a>/</li>
+                <li><a href="../files.php">Upute</a></li>
 
             </ul>
 

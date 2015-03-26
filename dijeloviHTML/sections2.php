@@ -19,20 +19,23 @@
         <p><a href="intervencije.php" class="more">Više</a></p>
     </div>
     <div class="section3">
-        <h3>Postavljanje kase u rad</h3>
+        <h3>Dokumentacija</h3>
         <p>&nbsp;</p>
-        <p>Instrukcije postavljanja kase u rad i najčešći problemi koji se javljaju na kasi<br>
+        <p>Kratke upute made by: Njićpra<br>
+            Upute za postavljanje kase u rad<br>
+            Uputstva za kupca
         </p>
         <p>&nbsp;</p>
         <p><a href="files.php" class="more">Više</a></p>
     </div>
     <div class="section4">
-        <h3>Uputstva za kupca</h3>
+        <h3>Ugovori</h3>
         <p>&nbsp;</p>
-        <p>Kratke upute made by: Njićpra<br>
-            Upute od digitrona
+        <p>Sve o ugovorima:<br><br>
+            Statusi ugovora<br>
+            Otvaranje novih ugovora
         </p>
         <p>&nbsp;</p>
-        <p><a href="#" class="more">Više</a></p>
+        <p><a href="../ugovori.php" class="more">Više</a></p>
     </div>
 </div>
