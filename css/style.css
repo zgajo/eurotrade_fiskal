@@ -459,9 +459,16 @@ footer{
     padding: 5px;
 }
 
-.a{
-    background: #4aaee7;
+.a:hover{
+    background: #076194;
     color: #fff;
+    text-decoration: none;
+    padding: 5px;
+    display: block;
+}
+.a{
+    background: #fff;
+    color: #076194;
     text-decoration: none;
     padding: 5px;
     display: block;
