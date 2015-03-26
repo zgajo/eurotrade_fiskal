@@ -45,22 +45,18 @@ ob_start();
                                     <h2>Id kupca: <?= $kupac_id ?></h2>
                                     <form name="hongkiat" id="hongkiat-form" method="get" action="">
                                         <div id="wrapping" class="clearfix">
-                                            <section id="aligned">
+                                            <section id="aligned2">
                                                 <input type="hidden" name="k_id" value="<?= $_GET['id'] ?>">
                                                 <h3>Ime: </h3>
-                                                <input type="text" name="ime" ptabindex="4" class="txtinput" value="<?= $_GET['ime'] ?>">
-                                                <h3>Prezime: </h3>
-                                                <input type="text" name="prezime" ptabindex="4" class="txtinput" value="<?= $_GET['prezime'] ?>">
+                                                <input type="text" name="ime" ptabindex="4" class="txt" value="<?= $_GET['ime'] ?>">
                                                 <h3>Tvrtka: </h3>
-                                                <input type="text" name="tvrtka" ptabindex="4" class="txtinput" value="<?= $_GET['tvrtka'] ?>">
-                                                <h3>Adresa: </h3>
-                                                <input type="text" name="adresa" ptabindex="4" class="txtinput" value="<?= $_GET['adresa'] ?>">
+                                                <input type="text" name="tvrtka" ptabindex="4" class="txt" value="<?= $_GET['tvrtka'] ?>">
+                                                
                                                 <h3>Grad: </h3>
-                                                <input type="text" name="grad" ptabindex="4" class="txtinput" value="<?= $_GET['grad'] ?>">
-                                                <h3>Kontakt broj: </h3>
-                                                <input type="text" name="kontakt_broj" ptabindex="4" class="txtinput" value="<?= $_GET['kontakt_broj'] ?>">
+                                                <input type="text" name="grad" ptabindex="4" class="txt" value="<?= $_GET['grad'] ?>">
+                                                
                                                 <h3>E-mail: </h3>
-                                                <input type="email" name="email" ptabindex="4" class="txtinput" value="<?= $_GET['email'] ?>">
+                                                <input type="email" name="email" ptabindex="4" class="txt" value="<?= $_GET['email'] ?>">
 
                                                 <section id="buttons">
                                                     <input type="submit" name="akcija" id="submitbtn" class="submitbtn" tabindex="7" value="Unesi">
@@ -68,6 +64,14 @@ ob_start();
                                                     <br style="clear:both;">
                                                 </section>
                                             </section>
+                                            <div id="aside2" class="clearfix">
+                                                <h3>Prezime: </h3>
+                                                <input type="text" name="prezime" ptabindex="4" class="txt" value="<?= $_GET['prezime'] ?>">
+                                                <h3>Adresa: </h3>
+                                                <input type="text" name="adresa" ptabindex="4" class="txt" value="<?= $_GET['adresa'] ?>">
+                                                <h3>Kontakt broj: </h3>
+                                                <input type="text" name="kontakt_broj" ptabindex="4" class="txt" value="<?= $_GET['kontakt_broj'] ?>">
+                                            </div>
                                     </form>
                                 </section>
 

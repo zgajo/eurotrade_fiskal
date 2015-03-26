@@ -71,7 +71,7 @@ include 'init.php';
 
                                             <div id="aside" class="clearfix">
                                                 <div id="recipientcase">
-                                                    <h2><?= $_GET['tvrtka'] ?></h2>
+                                                    <h2>Tvrtka: <?= $_GET['tvrtka'] ?></h2>
                                                     <h3>Ime i prezime: <?= $_GET['ime'] . ' ' . $_GET['prezime'] ?></h3>
                                                     <h3>Grad: <?= $_GET['grad'] ?></h3>
                                                     <h3>Adresa: <?= $_GET['adresa'] ?></h3>

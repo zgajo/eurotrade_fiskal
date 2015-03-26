@@ -29,7 +29,7 @@ a:hover {
     background-image: url(../images/bottom-rept.jpg);
     background-repeat: repeat-x;
     background-position: left bottom;
-    width: 100%;
+    min-width: 100%;
     float: left;
     min-height: 100%; 
     margin-bottom: -111px;
