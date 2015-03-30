@@ -9,6 +9,7 @@ function sve_intervencije(){
     return $query;
 }
 function intervencijaDet($id){
+    $id=(int)$id;
     $query = mysql_query("SELECT i.*, u.ime as serviser_ime, u.prezime as serviser_prezime, k.ime, k. prezime, k.tvrtka, k.kontakt_broj, k.adresa, k.grad, k.email FROM fisk_intervencija i, fisk_user u, fisk_kupac k WHERE i.id = '$id' AND i.fisk_user_id = u.id AND i.fisk_kupac_id = k.id");
 
     if (!$query) {
@@ -18,6 +19,7 @@ function intervencijaDet($id){
 }
 
 function intervencijaKupDet($kupac_id){
+    $kupac_id = (int)$kupac_id;
     $query = mysql_query("SELECT i.*, k.ime, k. prezime, k.tvrtka,u.ime as serviser_ime, u.prezime as serviser_prezime FROM fisk_intervencija i, fisk_kupac k, fisk_user u WHERE i.fisk_kupac_id = '$kupac_id' AND i.fisk_kupac_id = k.id AND i.fisk_user_id = u.id ORDER BY i.id");
     
     if (!$query) {
@@ -26,6 +28,9 @@ function intervencijaKupDet($kupac_id){
     return $query;
 }
 function nova_intervencija($int_od, $fisk_kupac_id, $zatrazeno, $user_id){
+    $fisk_kupac_id=(int)$fisk_kupac_id;
+    $zatrazeno = mysql_real_escape_string($zatrazeno);
+    $user_id = (int)$user_id;
     mysql_query("INSERT INTO fisk_intervencija (zatrazeno, intervencija_od, fisk_kupac_id, fisk_user_id) VALUES ('$zatrazeno', '$int_od', '$fisk_kupac_id', '$user_id')");
     
 }
