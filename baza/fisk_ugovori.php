@@ -9,10 +9,16 @@ function svi_ugovori() {
 }
 
 function novi_ugovor($trajanje, $dat_od, $dat_do, $cijena, $fisk_kupac_id){
+    $trajanje = (int)$trajanje;
+    $dat_od = mysql_real_escape_string($dat_od);
+   $dat_do = mysql_real_escape_string($dat_do);
+   $cijena = (float)$cijena;
+   $fisk_kupac_id = (int)$fisk_kupac_id;
    mysql_query("INSERT INTO fisk_ugovor (trajanje, cijena, dat_od, dat_do, fisk_kupac_id) VALUES ('$trajanje','$cijena','$dat_od', '$dat_do','$fisk_kupac_id')");
 }
 
 function ispravka_ugovora($ugovor_id){
+    $ugovor_id = (int)$ugovor_id;
   $query = mysql_query("SELECT * FROM fisk_ugovor WHERE id = '$ugovor_id'");  
   if (!$query) {
         die('Invalid query: ' . mysql_error());
@@ -21,3 +27,19 @@ function ispravka_ugovora($ugovor_id){
 }
 
 
+function izmjena_ugovora($id, $dat_od, $trajanje, $cijena, $dat_do){
+    $id = (int)$id;
+    $dat_od = mysql_real_escape_string($dat_od);
+    $dat_do = mysql_real_escape_string($dat_do);
+    $trajanje = (int)$trajanje;
+    $cijena = (float)$cijena;
+    
+    $query = mysql_query("UPDATE fisk_ugovor "
+            . "SET dat_od = '$dat_od',"
+            . "dat_do = '$dat_do',"
+            . "trajanje = '$trajanje',"
+            . "cijena = '$cijena'"
+            . "WHERE id = '$id'");
+    
+    
+}

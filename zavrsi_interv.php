@@ -65,7 +65,7 @@ ob_start();
                                                 <h3>Intervencija zatvorena na datum:</h3>
                                                 <?php
                                                 if (!empty($i_do)) {
-                                                    echo '<input type="datetime" name="intervencija_do" id="email" autocomplete="off" tabindex="2" class="txtinput"  value="' . date("d.m.Y", strtotime($i_do)) . '">';
+                                                    echo '<input type="date" name="intervencija_do" id="email" autocomplete="off" tabindex="2" class="txtinput"  value="' . date("d.m.Y", strtotime($i_do)) . '">';
                                                 } else {
                                                     echo '<input type="date" name="intervencija_do" id="email" autocomplete="off" tabindex="2" class="txtinput"  value="' . date("d.m.Y", strtotime($i_do)) . '">';
                                                 }

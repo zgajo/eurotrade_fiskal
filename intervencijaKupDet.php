@@ -54,8 +54,14 @@ include 'init.php';
                                     echo "<td>" . $row['id'] . "</td>";
                                     echo "<td>" . $row['zatrazeno'] . "</td>";
                                     echo "<td>" . $row['obavljeno'] . "</td>";
-                                    echo "<td>" . $row['intervencija_od'] . "</td>";
-                                    echo "<td>" . $row['intervencija_do'] . "</td>";
+                                    echo "<td>" . date('d.m.Y', strtotime($row['intervencija_od']));  "</td>";
+                                    if (!empty($row['intervencija_do'])){
+                                        echo "<td>" . date('d.m.Y', strtotime($row['intervencija_do'])); "</td>";
+                                    }
+                                    else {
+                                        echo "<td> </td>";;
+                                    }
+                                    
                                     echo "<td>" . $row['sifra_naplate'] . "</td>";
                                     echo "<td>". $row['serviser_ime']. ' ' . $row['serviser_prezime']."</td>";
                                     echo "</tr>";
