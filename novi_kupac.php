@@ -28,21 +28,21 @@ ob_start();
                                 <h1 class="title">Ubacite podatke <span>novoga kupca</span></h1>
                                 <section id="container">
 
-                                    <form name="hongkiat" id="hongkiat-form" method="get" action="">
+                                    <form name="hongkiat" id="hongkiat-form" method="POST" action="">
                                         <div id="wrapping" class="clearfix">
                                             <section id="aligned">
                                                 <h3>Ime: </h3>
-                                                <input type="text" name="ime" ptabindex="4" class="txtinput">
+                                                <input type="text" name="ime" ptabindex="4" class="txtinput" required>
                                                 <h3>Prezime: </h3>
-                                                <input type="text" name="prezime" ptabindex="4" class="txtinput">
+                                                <input type="text" name="prezime" ptabindex="4" class="txtinput" required>
                                                 <h3>Tvrtka: </h3>
-                                                <input type="text" name="tvrtka" ptabindex="4" class="txtinput">
+                                                <input type="text" name="tvrtka" ptabindex="4" class="txtinput" required>
                                                 <h3>Adresa: </h3>
-                                                <input type="text" name="adresa" ptabindex="4" class="txtinput">
+                                                <input type="text" name="adresa" ptabindex="4" class="txtinput" required>
                                                 <h3>Grad: </h3>
-                                                <input type="text" name="grad" ptabindex="4" class="txtinput">
+                                                <input type="text" name="grad" ptabindex="4" class="txtinput" required>
                                                 <h3>Kontakt broj: </h3>
-                                                <input type="text" name="kontakt_broj" ptabindex="4" class="txtinput">
+                                                <input type="text" name="kontakt_broj" ptabindex="4" class="txtinput" required>
                                                 <h3>E-mail: </h3>
                                                 <input type="email" name="email" ptabindex="4" class="txtinput">
 
@@ -55,17 +55,17 @@ ob_start();
                                     </form>
                                 </section>
                                 <?php
-                                if (!empty($_GET)) {
-                                    $tvrtka = $_GET['tvrtka'];
-                                    $ime = $_GET['ime'];
-                                    $prezime = $_GET['prezime'];
-                                    $adresa = $_GET['adresa'];
-                                    $grad = $_GET['grad'];
-                                    $kontakt_broj = $_GET['kontakt_broj'];
-                                    $email = $_GET['email'];
+                                if (!empty($_POST)) {
+                                    $tvrtka = $_POST['tvrtka'];
+                                    $ime = $_POST['ime'];
+                                    $prezime = $_POST['prezime'];
+                                    $adresa = $_POST['adresa'];
+                                    $grad = $_POST['grad'];
+                                    $kontakt_broj = $_POST['kontakt_broj'];
+                                    $email = $_POST['email'];
 
                                     unos_kupca($ime, $prezime, $tvrtka, $adresa, $grad, $email, $kontakt_broj);
-                                    header("location:index.php");
+                                    header("location:kupci.php");
                                     exit();
                                 }
                                 ?>

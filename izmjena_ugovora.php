@@ -76,7 +76,7 @@ ob_start();
                                     $kontakt_broj = $_GET['kontakt_broj'];
                                     $email = $_GET['email'];
                                     ispravka_kupca($id, $ime, $prezime, $tvrtka, $adresa, $grad, $email, $kontakt_broj);
-                                    header("location:kupci.php");
+                                    header("location:ugovori.php");
                                     exit();
                                 }
                                 ?>

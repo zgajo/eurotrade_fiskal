@@ -26,7 +26,13 @@ include 'init.php';
                             <div>
                                 
                                 <?php
-                                echo '<h1 class="title" style="display:inline">Sve intervencije<span> za kupca</span></h1>';
+                                $id = (int)$_GET['fisk_kupac_id'];
+                                $rez = kupacDet($id);
+                                 while ($row = mysql_fetch_array($rez)) {
+                                    $ime = $row['ime'];
+                                    $prezime = $row['prezime'];
+                                }
+                                echo '<h1 class="title" style="display:inline">Sve intervencije<span> za kupca'. " " . $ime . " " . $prezime .'</span></h1>';
                                 echo "<table>
                                     <thead>
                                         <tr>
@@ -40,7 +46,7 @@ include 'init.php';
 
                                         </tr>
                                         </thead>";
-                                $kupac_id = $_GET['fisk_kupac_id'];
+                                $kupac_id = (int)$id;
                                 $result = intervencijaKupDet($kupac_id);
                                 while ($row = mysql_fetch_array($result)) {
                                     echo "<tbody>";

@@ -54,8 +54,8 @@ include 'init.php';
                                    }
                                    else $d_d = "";
                                     echo "<tr  background-color:'>";
-                                    echo "<td><a  href='intervencijaDet.php?id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Detalji</B></a></td>";
-                                    echo "<td><a  href='zavrsi_interv.php?id=" . $row['id'] . "'><B>"/* . $row["id"] */ . "Izmijeni rn</B></a></td>";
+                                    echo "<td><a  href='intervencijaDet.php?id=" . $row['id'] . "'><B>". "Detalji</B></a></td>";
+                                    echo "<td><a  href='zavrsi_interv.php?id=" . $row['id'] . "'><B>" . "Izmijeni rn</B></a></td>";
                                     echo "<td>" . $row['id'] . "</td>";
                                     echo "<td>" . $row['ime'] . ' ' . $row['prezime'] . ', ' . $row['tvrtka'] . "</td>";
                                     echo "<td>" . $row['zatrazeno'] . "</td>";

@@ -28,6 +28,7 @@ function intervencijaKupDet($kupac_id){
     return $query;
 }
 function nova_intervencija($int_od, $fisk_kupac_id, $zatrazeno, $user_id){
+    $int_od =  mysql_real_escape_string($int_od);
     $fisk_kupac_id=(int)$fisk_kupac_id;
     $zatrazeno = mysql_real_escape_string($zatrazeno);
     $user_id = (int)$user_id;
@@ -37,6 +38,10 @@ function nova_intervencija($int_od, $fisk_kupac_id, $zatrazeno, $user_id){
 
 
 function inter_update($i_id, $obavljeno,  $i_do, $sifra_naplate){
+    $i_id = (int)$i_id;
+    $obavljeno=  mysql_real_escape_string($obavljeno);
+    $i_do = mysql_real_escape_string($i_do);
+    $sifra_naplate = mysql_real_escape_string($sifra_naplate);
     $update = ("UPDATE fisk_intervencija 
              SET obavljeno = '$obavljeno',
             intervencija_do = '$i_do',

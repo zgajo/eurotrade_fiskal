@@ -28,7 +28,7 @@ ob_start();
                                 <h1 class="title">Izrada <span>novoga ugovora</span></h1>
                                 <section id="container">
 
-                                    <form name="hongkiat" id="hongkiat-form" method="get" action="">
+                                    <form name="hongkiat" id="hongkiat-form" method="POST" action="">
                                         <div id="wrapping" class="clearfix">
                                             <section id="aligned">
                                                 <h3>Trajanje ugovora (mjeseci): </h3>
@@ -58,11 +58,11 @@ ob_start();
                                     </form>
                                 </section>
                                 <?php
-                                if (!empty($_GET)) {
-                                    $trajanje = $_GET['trajanje'];
-                                    $dat_od = $_GET['dat_od'];
-                                    $cijena = $_GET['cijena'];
-                                    $fisk_kupac_id = $_GET['fisk_kupac_id'];
+                                if (!empty($_POST)) {
+                                    $trajanje = $_POST['trajanje'];
+                                    $dat_od = $_POST['dat_od'];
+                                    $cijena = $_POST['cijena'];
+                                    $fisk_kupac_id = $_POST['fisk_kupac_id'];
                                     $date = $dat_od;
                                     $dat_do = strtotime ( ("+$trajanje months") , strtotime ( $date ) ) ;
                                     $dat_do = date('Y-m-j', $dat_do);
