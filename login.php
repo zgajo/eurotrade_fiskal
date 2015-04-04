@@ -20,25 +20,26 @@ include 'init.php';
   
   <div class="login-card">
     <h1>Log-in</h1><br>
-  <form >
+  <form method="POST">
     <input type="text" name="user" placeholder="Username">
     <input type="password" name="pass" placeholder="Password">
     <input type="submit" name="login" class="login login-submit" value="login">
   </form>
 <?php
-$user = mysql_real_escape_string($_GET['user']);
-$pass = mysql_real_escape_string($_GET['pass']);
+$user = mysql_real_escape_string($_POST['user']);
+$pass = mysql_real_escape_string($_POST['pass']);
 
 
-if (!empty($_GET['login'])){
+if (!empty($_POST['login'])){
 if (login($user, $pass)===TRUE){
   $_SESSION['username'] = $user;
   header('location: index.php');
 }
 else{
-  echo '<script>
-alert("Uneseni netočni podaci!")
-</script>';
+  echo "<script>
+alert('Uneseni neispravni podaci!');
+window.location.href = 'login.php';
+</script>";
 }
 }
 ?>

@@ -11,7 +11,7 @@ while ($run = mysql_fetch_array($result)){
     $ime = $run['ime'];
     $prezime = $run['prezime'];
     $tvrtka = $run['tvrtka'];
-    echo '<li><a class="a" href="ispravka_kupca.php?fisk_kupac_id=' .$id. '">'.$ime.' '.$prezime.', '.$tvrtka.'</a></li>';
+    echo '<li><a class="a" href="intervencijaKupDet.php?fisk_kupac_id=' .$id. '">'.$ime.' '.$prezime.', '.$tvrtka.'</a></li>';
 }
 echo '</ul>';
 }

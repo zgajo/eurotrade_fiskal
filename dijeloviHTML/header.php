@@ -6,6 +6,7 @@
                 <li><a href="kupci.php"><span>Kupci</span></a></li>
                 <li><a href="intervencije.php"><span>Intervencije</span></a></li>
                 <li><a href="ugovori.php"><span>Ugovori</span></a></li>
+                <li><a href="logout.php"><span>logout</span></a></li>
             </ul>
         </div>
         

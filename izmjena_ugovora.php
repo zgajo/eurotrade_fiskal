@@ -1,5 +1,6 @@
 <?php
 include './init.php';
+include 'baza/check_login.php';
 ob_start();
 ?>
 

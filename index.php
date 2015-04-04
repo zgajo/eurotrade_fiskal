@@ -29,10 +29,9 @@ include 'baza/check_login.php';
                     <div class="left-out">
                         <div class="left-in">
                             <div class="left-panel">
-                                <h1 class="title">Dobrodošli <span>na našu stranicu</span></h1><a href="login.php">login</a><a href="logout.php">logout</a>
-                                <p>Za sva pitanja i probleme kontaktirati Darka Pranjića ili Mladena Vitulića. Oni su najbolji! <br>
-                                    Trenutno je u izradi stranica za ubacivanje novih kupaca
-                                </p>
+                                <h1 class="title">Dobrodošli <span>na našu stranicu</span></h1>
+                                <p>Intervencije prema kupcu: <br>
+                                                                   </p>
                                 <p>&nbsp;</p>
                                 <span id="box">
                                     <input type="text" id="search_box"><button id="search_button">Pretraži</button>
