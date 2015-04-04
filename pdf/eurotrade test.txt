@@ -1,0 +1,4 @@
+$mysql_host = "mysql13.000webhost.com";
+$mysql_database = "a4230630_euro";
+$mysql_user = "a4230630_euro";
+$mysql_password = "casino12";

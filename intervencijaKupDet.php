@@ -13,21 +13,28 @@ include 'init.php';
         <meta name="description" content="Description of your site goes here">
         <meta name="keywords" content="Eurotrade, Servis, Eurotrade servis">
         <link href="css/style.css" rel="stylesheet" type="text/css">
-        
+        <link href="css/table.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div class="main">
+            <?php include 'dijeloviHTML/header.php'; ?>
+            <div class="header-img"><img src="images/header.jpg"  style="margin-bottom: 15px;  " alt="" height="225" width="100%"></div>
             <div class="page-out">
-                <?php include 'dijeloviHTML/header.php';?>
                 <div class="content">
                     <div style="width: 900px;">
                         <div>
                             <div>
                                 
                                 <?php
-                                echo '<h1 style="display:inline">Kupci</h1>';
-                                echo '<button style="display:inline; float:right;">Novi kupac</button>';
-                                echo "<table border='1' style='color:green; font-size:14px;'>
+                                $id = (int)$_GET['fisk_kupac_id'];
+                                $rez = kupacDet($id);
+                                 while ($row = mysql_fetch_array($rez)) {
+                                    $ime = $row['ime'];
+                                    $prezime = $row['prezime'];
+                                }
+                                echo '<h1 class="title" style="display:inline">Sve intervencije<span> za kupca'. " " . $ime . " " . $prezime .'</span></h1>';
+                                echo "<table>
+                                    <thead>
                                         <tr>
                                         <th>ID</th>
                                         <th>Zatraženo</th>
@@ -37,19 +44,28 @@ include 'init.php';
                                         <th>Naplaćena šifra</th>
                                         <th>Serviser</th>
 
-                                        </tr>";
-                                $kupac_id = $_GET['fisk_kupac_id'];
+                                        </tr>
+                                        </thead>";
+                                $kupac_id = (int)$id;
                                 $result = intervencijaKupDet($kupac_id);
                                 while ($row = mysql_fetch_array($result)) {
+                                    echo "<tbody>";
                                     echo "<tr>";
                                     echo "<td>" . $row['id'] . "</td>";
                                     echo "<td>" . $row['zatrazeno'] . "</td>";
                                     echo "<td>" . $row['obavljeno'] . "</td>";
-                                    echo "<td>" . $row['intervencija_od'] . "</td>";
-                                    echo "<td>" . $row['intervencija_do'] . "</td>";
+                                    echo "<td>" . date('d.m.Y', strtotime($row['intervencija_od']));  "</td>";
+                                    if (!empty($row['intervencija_do'])){
+                                        echo "<td>" . date('d.m.Y', strtotime($row['intervencija_do'])); "</td>";
+                                    }
+                                    else {
+                                        echo "<td> </td>";;
+                                    }
+                                    
                                     echo "<td>" . $row['sifra_naplate'] . "</td>";
                                     echo "<td>". $row['serviser_ime']. ' ' . $row['serviser_prezime']."</td>";
                                     echo "</tr>";
+                                    echo "</tbody>";
                                 }
                                 echo "</table>";
                                 ?>
@@ -59,49 +75,12 @@ include 'init.php';
                         </div>
                     </div>
                   
-                   <div class="sections">
-                        <div class="section1">
-                            <h3>Kupci</h3>
-                            <p>&nbsp;</p>
-                            <p>Status ugovora/
-                                kupci<br>
-                                Novi kupac<br>
-                                Izrada novog ugovora
-                            </p>
-                            <p>&nbsp;</p>
-                            <p><a href="#" class="more">Više</a></p>
-                        </div>
-                        <div class="section2">
-                            <h3>Intervencije</h3>
-                            <p>&nbsp;</p>
-                            <p>Sve intervencije i izrada novih<br>
-                            </p>
-                            <p>&nbsp;</p>
-                            <p><a href="#" class="more">Više</a></p>
-                        </div>
-                        <div class="section3">
-                            <h3>Postavljanje kase u rad</h3>
-                            <p>&nbsp;</p>
-                            <p>Instrukcije postavljanja kase u rad i najčešći problemi koji se javljaju na kasi<br>
-                            </p>
-                            <p>&nbsp;</p>
-                            <p><a href="#" class="more">Više</a></p>
-                        </div>
-                        <div class="section4">
-                            <h3>Uputstva za kupca</h3>
-                            <p>&nbsp;</p>
-                            <p>Kratke upute made by: Njićpra<br>
-                                Upute od digitrona
-                            </p>
-                            <p>&nbsp;</p>
-                            <p><a href="#" class="more">Više</a></p>
-                        </div>
-                </div>
-                <?php include 'dijeloviHTML/footer.php';?>
+                    <?php include 'dijeloviHTML/sections.php'; ?>
+                
             </div>
         </div>
-
-
+</div>
+<?php include 'dijeloviHTML/footer.php';?>
     </body>
 </html>
 

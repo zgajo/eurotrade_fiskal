@@ -9,6 +9,10 @@ body {
     margin: 0px;
     height: 100%;
 }
+html{
+    margin: 0px;
+    height: 100%;  
+}
 h1, h2, h3, h4, h5, h6, p, ul, ol, li, form, input, textarea {
     padding: 0px;
     margin: 0px;
@@ -25,19 +29,36 @@ a:hover {
     background-image: url(../images/bottom-rept.jpg);
     background-repeat: repeat-x;
     background-position: left bottom;
-    width: 100%;
+    min-width: 100%;
     float: left;
+    min-height: 100%; 
+    margin-bottom: -111px;
 }
+
+
 .page-out {
     width: 939px;
     margin: 0px auto;
     padding-top: 8px;
 }
+.page-out2 {
+    width: 1200px;
+    margin: 0px auto;
+    padding-top: 8px;
+}
+
 
 .header {
     width: 899px;
-    float: left;
     padding: 0px 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header2 {
+    width: 899px;
+    padding: 0px 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .header-top {
     width: 899px;
@@ -99,14 +120,25 @@ a:hover {
     background-position: right top;
 }
 .header-img {
-    width: 899px;
+    width: 100%;
     float: left;
 }
 .content {
     width: 899px;
     /* float: left; */
     padding: 19px 20px 0px 20px;
+  
 }
+.content2 {
+    width: 1100px;
+    /* float: left; */
+    padding: 19px 20px 0px 20px;
+    margin-left: auto;
+    margin-right: auto;
+  
+}
+
+
 .left-out {
     background-image: url(../images/body-rept.jpg);
     background-repeat: repeat-y;
@@ -214,8 +246,22 @@ a:hover {
     width: 899px;
     height: 184px;
     float: left;
-    padding-top: 41px;
+    margin-bottom: 111px;
+    margin-top: 111px;
 }
+
+.sections2 {
+    width: 899px;
+    height: 184px;
+   // float: left;
+    padding-top: 41px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    margin-bottom: 111px;
+    margin-top: 111px;
+}
+
 .section1 {
     font-size: 11px;
     background-image: url(../images/sec1bg.jpg);
@@ -281,6 +327,12 @@ a.more:hover {
     color: #333333;
     text-decoration: underline;
 }
+footer{
+    margin-left: auto;
+    margin-right: auto;
+    width: 899px;
+}
+
 .footer {
     background-image: url(../images/footer-img.jpg);
     background-repeat: no-repeat;
@@ -289,7 +341,14 @@ a.more:hover {
     height: 111px;
     float: left;
     padding: 0px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    bottom:0px;
+    /* position: absolute; */
 }
+
+
+
 .footer-left {
     font-size: 11px;
     color: #FFFFFF;
@@ -400,10 +459,134 @@ a.more:hover {
     padding: 5px;
 }
 
-.a{
-    background: #4aaee7;
+.a:hover{
+    background: #076194;
     color: #fff;
     text-decoration: none;
     padding: 5px;
     display: block;
+}
+.a{
+    background: #fff;
+    color: #076194;
+    text-decoration: none;
+    padding: 5px;
+    display: block;
+}
+
+
+.myButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
+	background:-moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:-ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
+	background-color:#ffffff;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
+	background:-moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:-ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
+	background-color:#f6f6f6;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.btn-file {
+  /* position: relative; */
+  /* overflow: hidden; */
+  /* height: 24px; */
+  /* padding-top: 2px; */
+  /* border-radius: 15px; */
+}
+.btn-file input[type=file] {
+  position: absolute;
+  /* top: 342px; */
+  /* right: 0; */
+  min-width: 350px;
+  /* min-height: 100%; */
+  /* font-size: 100px; */
+  text-align: right;
+  filter: alpha(opacity=0);
+   
+  opacity: 0; 
+  background: red;
+  cursor: pointer;
+  display: block;
+  margin-top: -18px;
+}
+input[readonly] {
+  background-color: white !important;
+  cursor: text !important;
+  height: 20px;
+  min-width: 74%;
+  display: inline-block;
+ 
+  /* border-radius: 15px; */
+  margin-left: 0;
+}
+
+.input-group{
+    display: inline-block;
+    width: 350px;
+    /* position: relative; */
+    /* border-radius: 15px; */
+}
+
+.input-group-btn{
+    /* position: absolute; */
+    background-color: #4aaee7;
+    /* min-height: 24px; */
+    min-width: 81px;
+    /* font-size: 13px; */
+    display: inline-block;
+    text-align:center;
+   cursor: pointer;
+   color: white;
+   
+    height: 24px;
+    /* padding-top: 4px; */
+    /* border-radius: 15px; */
+    
+    /* display: inline; */
+}
+
+.input-group-btn:hover{
+   background-color: #3b8bb8;
+}
+
+.upload{
+    display: inline-block;
+    margin-left: 15px;
+     background: #474747;
+    border: none;  
+    color: white;
+    padding: 5px 10px;
+}
+.upload:hover{
+    background-color: #757575;
 }

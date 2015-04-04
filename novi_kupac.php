@@ -18,8 +18,9 @@ ob_start();
     </head>
     <body>
         <div class="main">
+            <?php include 'dijeloviHTML/header.php'; ?>
+            <div class="header-img"><img src="images/header.jpg"  style="margin-bottom: 15px;  " alt="" height="225" width="100%"></div>
             <div class="page-out">
-                <?php include 'dijeloviHTML/header.php'; ?>
                 <div class="content">
                     <div class="left-out">
                         <div class="left-in">
@@ -27,21 +28,21 @@ ob_start();
                                 <h1 class="title">Ubacite podatke <span>novoga kupca</span></h1>
                                 <section id="container">
 
-                                    <form name="hongkiat" id="hongkiat-form" method="get" action="">
+                                    <form name="hongkiat" id="hongkiat-form" method="POST" action="">
                                         <div id="wrapping" class="clearfix">
                                             <section id="aligned">
                                                 <h3>Ime: </h3>
-                                                <input type="text" name="ime" ptabindex="4" class="txtinput">
+                                                <input type="text" name="ime" ptabindex="4" class="txtinput" required>
                                                 <h3>Prezime: </h3>
-                                                <input type="text" name="prezime" ptabindex="4" class="txtinput">
+                                                <input type="text" name="prezime" ptabindex="4" class="txtinput" required>
                                                 <h3>Tvrtka: </h3>
-                                                <input type="text" name="tvrtka" ptabindex="4" class="txtinput">
+                                                <input type="text" name="tvrtka" ptabindex="4" class="txtinput" required>
                                                 <h3>Adresa: </h3>
-                                                <input type="text" name="adresa" ptabindex="4" class="txtinput">
+                                                <input type="text" name="adresa" ptabindex="4" class="txtinput" required>
                                                 <h3>Grad: </h3>
-                                                <input type="text" name="grad" ptabindex="4" class="txtinput">
+                                                <input type="text" name="grad" ptabindex="4" class="txtinput" required>
                                                 <h3>Kontakt broj: </h3>
-                                                <input type="text" name="kontakt_broj" ptabindex="4" class="txtinput">
+                                                <input type="text" name="kontakt_broj" ptabindex="4" class="txtinput" required>
                                                 <h3>E-mail: </h3>
                                                 <input type="email" name="email" ptabindex="4" class="txtinput">
 
@@ -54,17 +55,17 @@ ob_start();
                                     </form>
                                 </section>
                                 <?php
-                                if (!empty($_GET)) {
-                                    $tvrtka = $_GET['tvrtka'];
-                                    $ime = $_GET['ime'];
-                                    $prezime = $_GET['prezime'];
-                                    $adresa = $_GET['adresa'];
-                                    $grad = $_GET['grad'];
-                                    $kontakt_broj = $_GET['kontakt_broj'];
-                                    $email = $_GET['email'];
+                                if (!empty($_POST)) {
+                                    $tvrtka = $_POST['tvrtka'];
+                                    $ime = $_POST['ime'];
+                                    $prezime = $_POST['prezime'];
+                                    $adresa = $_POST['adresa'];
+                                    $grad = $_POST['grad'];
+                                    $kontakt_broj = $_POST['kontakt_broj'];
+                                    $email = $_POST['email'];
 
                                     unos_kupca($ime, $prezime, $tvrtka, $adresa, $grad, $email, $kontakt_broj);
-                                    header("location:index.php");
+                                    header("location:kupci.php");
                                     exit();
                                 }
                                 ?>
@@ -77,59 +78,22 @@ ob_start();
                         <div class="right-in">
                             <div class="right-panel">
                                 <div class="right-block">
-                                    <h2>Kategorije</h2>
-                                    <ul>
+                                    <h2 class="title">Kategorije</h2>
+                                    <ul class="title">
                                         <li><a href="nova_intervencija.php">Nova intervencija</a></li>
                                         <li><a href="novi_kupac.php">Novi kupac</a></li>
-                                        <li><a href="#">Novi ugovor</a></li>
+                                        <li><a href="novi_ugovor.php">Novi ugovor</a></li>
 
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="sections">
-                        <div class="section1">
-                            <h3>Kupci</h3>
-                            <p>&nbsp;</p>
-                            <p>Status ugovora/
-                                kupci<br>
-                                Novi kupac<br>
-                                Izrada novog ugovora
-                            </p>
-                            <p>&nbsp;</p>
-                            <p><a href="#" class="more">Više</a></p>
-                        </div>
-                        <div class="section2">
-                            <h3>Intervencije</h3>
-                            <p>&nbsp;</p>
-                            <p>Sve intervencije i izrada novih<br>
-                            </p>
-                            <p>&nbsp;</p>
-                            <p><a href="#" class="more">Više</a></p>
-                        </div>
-                        <div class="section3">
-                            <h3>Postavljanje kase u rad</h3>
-                            <p>&nbsp;</p>
-                            <p>Instrukcije postavljanja kase u rad i najčešći problemi koji se javljaju na kasi<br>
-                            </p>
-                            <p>&nbsp;</p>
-                            <p><a href="#" class="more">Više</a></p>
-                        </div>
-                        <div class="section4">
-                            <h3>Uputstva za kupca</h3>
-                            <p>&nbsp;</p>
-                            <p>Kratke upute made by: Njićpra<br>
-                                Upute od digitrona
-                            </p>
-                            <p>&nbsp;</p>
-                            <p><a href="#" class="more">Više</a></p>
-                        </div>
-                    </div>
+                    <?php include 'dijeloviHTML/sections.php'; ?>
                 </div>
-                <?php include 'dijeloviHTML/footer.php' ?>
             </div>
         </div>
+                <?php include 'dijeloviHTML/footer.php' ?>
 
 
     </body>
