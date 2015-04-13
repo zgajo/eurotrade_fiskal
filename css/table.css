@@ -88,7 +88,9 @@ td.user-name {
 }
 
 .files{
-width: auto;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .files th{

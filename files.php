@@ -40,7 +40,7 @@ include 'baza/check_login.php';
                                     header('refresh:3;location:files.php');
                                 }
                                 ?>
-                                <form style="margin-bottom: 15px; margin-top: 15px;" method="POST" enctype="multipart/form-data">
+                                <form style="margin-bottom: 15px; margin-top: 15px;width: 442px; margin-right:auto; margin-left:auto;" method="POST" enctype="multipart/form-data">
                                     <input type="hidden" name="upload" value="1">
                                     <div class="input-group">
                                         <span class="input-group-btn">
@@ -53,27 +53,33 @@ include 'baza/check_login.php';
                                     <input class="upload" type="submit" value="Upload">
                                 </form>
 
-                                <h1 class="title">Upute za postavljenje<span> kase u rad:</span></h1>
+                                <h1 class="title" style="margin-left: 166px;">Upute za postavljenje<span> kase u rad:</span></h1>
 
                                 <?php
+                               
                                 if ($handle = opendir('pdf/')) {
+                                    
                                     while (false !== ($file = readdir($handle))) {
-
                                         if (($file != ".") && ($file != "..")) {
-                                            $kb = filesize("pdf/$file ") / 1024;
-                                            $velicina = round($kb, 2);
-                                            $thelist .= '<tr>'
-                                                    . '<td>'
-                                                    . '<a href="pdf/' . $file . '">' . $file . '</a>'
-                                                    . '</td>'
-                                                    . '<td>' . pathinfo("pdf/$file ", PATHINFO_EXTENSION) . '</td>'
-                                                    . '<td>' . $velicina . '</td>'
-                                                    . '<td>' . date("d. m. Y H:i:s.", filemtime("pdf/$file ")) . '</td>'
-                                                    . '</tr>';
-                                            /* $thelist .= '<li><a href="pdf/' . $file . '">' . $file . '</a>'; */
+                                           $files[]=$file;
                                         }
                                     }
-
+                                    
+                                    
+                                    sort($files);
+                                    foreach($files as $file){
+                                      $mod = @filemtime("pdf/$file");
+                                           
+                                            $thelist .= '<tr>'
+                                                    . '<td>'
+                                                    . '<a href="pdf/' . $file . '"  target="_blank">' . $file . '</a>'
+                                                    . '</td>'
+                                                    . '<td>' . pathinfo("pdf/$file ", PATHINFO_EXTENSION) . '</td>'
+                                                    . '<td>' . filesize_formatted($file) . '</td>'
+                                                    . '<td>' . date("d. m. Y H:i:s.", $mod) . '</td>'
+                                                    . '</tr>';
+                                    }
+                                    
                                     closedir($handle);
                                 }
                                 ?>
@@ -81,58 +87,21 @@ include 'baza/check_login.php';
                                     <thead>
                                     <th>Datoteka</th>
                                     <th>Tip</th>
-                                    <th>Veličina (kb)</th>
+                                    <th>Veličina</th>
                                     <th>Izmijenjeno</th>
                                     </thead>
+                                    
+                                    
                                     <?= $thelist ?>
+                                    
                                 </table>
-                                <!-- <UL>
-                                     <P><?= $thelist ?></p>
-                                 </UL> -->
                                 <p>&nbsp;</p>
                                 <p>&nbsp;</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="sections">
-                        <div class="section1">
-                            <h3>Kupci</h3>
-                            <p>&nbsp;</p>
-                            <p>Status ugovora/
-                                kupci<br>
-                                Novi kupac<br>
-                                Izrada novog ugovora
-                            </p>
-                            <p>&nbsp;</p>
-                            <p><a href="#" class="more">Više</a></p>
-                        </div>
-                        <div class="section2">
-                            <h3>Intervencije</h3>
-                            <p>&nbsp;</p>
-                            <p>Sve intervencije i izrada novih<br>
-                            </p>
-                            <p>&nbsp;</p>
-                            <p><a href="#" class="more">Više</a></p>
-                        </div>
-                        <div class="section3">
-                            <h3>Postavljanje kase u rad</h3>
-                            <p>&nbsp;</p>
-                            <p>Instrukcije postavljanja kase u rad i najčešći problemi koji se javljaju na kasi<br>
-                            </p>
-                            <p>&nbsp;</p>
-                            <p><a href="#" class="more">Više</a></p>
-                        </div>
-                        <div class="section4">
-                            <h3>Uputstva za kupca</h3>
-                            <p>&nbsp;</p>
-                            <p>Kratke upute made by: Njićpra<br>
-                                Upute od digitrona
-                            </p>
-                            <p>&nbsp;</p>
-                            <p><a href="#" class="more">Više</a></p>
-                        </div>
-                    </div>
+                    <?php include 'dijeloviHTML/sections.php'; ?>
                 </div>
             </div>
         </div>
